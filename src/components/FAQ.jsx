@@ -60,14 +60,20 @@ const FAQ = () => {
                                 onClick={() => toggleFAQ(index)}
                             >
                                 <p className="text-2xl text-[#E2DDDB]">{faq.question}</p>
-                                <span className='relative text-3xl text-[#383838] flex justify-center items-center'>
-                                    <button
-                                        className=" w-[40px] h-[40px] rounded-full bg-[#dcd5cf] "
-                                        onClick={() => toggleFAQ(index)}
-                                    >
-                                        {openIndex === index ? '-' : '-'}
-                                    </button>
-                                </span>
+
+
+                                <button
+                                    className="relative w-10 h-10 bg-gray-300 rounded-full flex justify-center items-center focus:outline-none"
+                                    onClick={() => toggleFAQ(index)}
+                                >
+                                    <span
+                                        className={`absolute w-3 h-0.5 bg-black transform transition-transform ${openIndex == index ? 'rotate-0' : 'rotate-90'
+                                            }`}
+                                    ></span>
+                                    <span
+                                        className="absolute w-3 h-0.5 bg-black"
+                                    ></span>
+                                </button>
                             </div>
                             <div
                                 className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === index ? 'max-h-40' : 'max-h-0'}`}

@@ -67,7 +67,7 @@ const FAQ = () => {
                                     onClick={() => toggleFAQ(index)}
                                 >
                                     <span
-                                        className={`absolute w-3 h-0.5 bg-black transform transition-transform ${openIndex == index ? 'rotate-0' : 'rotate-90'
+                                        className={`absolute w-3 h-0.5 bg-black transform transition-transform ${openIndex === index ? 'rotate-0' : 'rotate-90'
                                             }`}
                                     ></span>
                                     <span

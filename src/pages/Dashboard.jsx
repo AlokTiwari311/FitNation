@@ -1,10 +1,10 @@
 import React from "react";
-// import { VortexDemo } from "../components/VortexDemo";
+import TraineeDashboard from "../components/TraineeDashboard";
 
 const Dashboard = () => {
   return (
-    <div className="flex justify-center items-center text-white text-3xl h-full">
-      {/* <VortexDemo /> */}
+    <div className="">
+      <TraineeDashboard />
     </div>
   );
 };

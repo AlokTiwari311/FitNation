@@ -7,3 +7,115 @@ body {
     overflow-x: hidden;
     background-color: black;
 }
+
+html,
+body {
+    background-color: #2C2B2A;
+}
+
+.projectSection {
+    height: 80vh;
+    padding-top: 10vw;
+    width: 100vw;
+    position: relative;
+    padding-bottom: 4vw;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    padding: 0 2vw 2vw;
+
+}
+
+.title p {
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 1em;
+    width: 100%;
+    display: inline-block;
+}
+
+.elem {
+    height: 25vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2vw;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+.elem .overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #FB5607;
+    top: -100%;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.elem:hover .overlay {
+    top: 0;
+    cursor: pointer;
+}
+
+.elem a {
+    font-size: 4vw;
+    font-weight: 600;
+    z-index: 5;
+    padding: 2vw 0;
+
+}
+
+.fixed-image {
+    position: fixed !important;
+    z-index: 99;
+    width: 25vw;
+    height: 30vw;
+    border-radius: 12px;
+    top: 28%;
+    background-color: #fe330a;
+    left: 6%;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.projectSection .nav-link {
+    margin: 3vw;
+}
+
+.alok {
+
+    opacity: 0;
+    z-index: 40;
+}
+
+.elem .alok {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.elem:hover .alok {
+    opacity: 1;
+}
+
+.elem a {
+    padding-left: 0;
+    transition: padding-left 0.4s ease-in-out;
+}
+
+.elem:hover a {
+    padding-left: 20px;
+}
+
+.class_image {
+    background-image: url("https://assets-global.website-files.com/64a9b04469265b578b40676b/64acf47db7f1e27015ce972a_img-bg-classes-new.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

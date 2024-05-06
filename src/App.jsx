@@ -9,6 +9,7 @@ import About from "./pages/About";
 import FAQ from "./components/FAQ"
 import { useEffect, useState } from "react";
 import PrivateRoute from "./components/PrivateRoute";
+import Classes from "./components/Classes";
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
         />
 
         <Route path="/faq" element={<FAQ isLoggedIn={isLoggedIn} />} />
+        <Route path="/classes" element={<Classes isLoggedIn={isLoggedIn} />} />
+
         <Route
           path="/dashboard"
           element={

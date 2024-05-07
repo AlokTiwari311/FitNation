@@ -134,7 +134,7 @@ const FoodForm = () => {
             </div>
           </div>
 
-          <button className="bg-[#fb5607] text-[#000000] py-2 px-4 rounded-lg font-medium">
+          <button className="bg-[#fb5607] text-gray-50 py-2 px-4 rounded-lg font-medium">
             Save Changes
           </button>
         </div>

@@ -165,6 +165,8 @@ const ProfileForm = () => {
             <input
               type="tel"
               name="mobileNumber"
+              minLength={10}
+              maxLength={10}
               onChange={changeHandler}
               placeholder="Enter Mobile Number"
               value={formData.mobileNumber}
@@ -178,6 +180,7 @@ const ProfileForm = () => {
               <p className="text-black mb-1 leading-[1.375rem]">
                 Email Address
               </p>
+              <sup className="text-red-500 mt-4 ml-1">*</sup>
             </div>
             <input
               required
@@ -191,7 +194,7 @@ const ProfileForm = () => {
           </label>
         </div>
 
-        <button className="w-full bg-[#fb5607] rounded-[8px] font-medium text-[#000000] px-[12px] py-[8px] mt-6 hover:bg-orange-600">
+        <button className="w-full bg-[#fb5607] rounded-[8px] font-medium text-gray-50 px-[12px] py-[8px] mt-6 hover:bg-orange-600">
           Save Changes
         </button>
       </form>

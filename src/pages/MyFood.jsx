@@ -75,7 +75,7 @@ const MyFood = () => {
 
   const renderRecipeCard = () => {
     return (
-      <div className="w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col mr-5 h-auto">
+      <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col mr-5 h-auto">
         <div className="p-4 h-5/6">
           <img
             src={Recipe1Image}
@@ -111,11 +111,11 @@ const MyFood = () => {
   return (
     <div className="h-auto flex flex-col">
       <div>
-        <h1 className="text-2xl text-black font-bold mb-4">
+        <h1 className="text-2xl text-black font-bold py-4">
           Your Food Preference
         </h1>
-        <div className="flex flex-row justify-between">
-          <div className="w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col mr-5 h-80">
+        <div className="flex flex-col sm:flex-row justify-between gap-5">
+          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-80 mb-5 sm:mb-0">
             <div className="p-4 h-5/6">
               <img
                 src={
@@ -134,7 +134,7 @@ const MyFood = () => {
             </div>
           </div>
 
-          <div className="w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col relative">
+          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col relative">
             {preferredCuisine.length > 1 && (
               <>
                 <button
@@ -181,8 +181,8 @@ const MyFood = () => {
 
       <hr className="my-10" />
 
-      <div className="flex flex-col">
-        <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col gap-4">
+        <div className="flex justify-between items-center py-4">
           <h1 className="text-2xl text-black font-bold">Todays Intake</h1>
           <button
             className="flex items-center bg-orange-500 text-white font-bold py-1 px-4 rounded-full shadow hover:bg-orange-600 transition duration-300"
@@ -193,16 +193,16 @@ const MyFood = () => {
           </button>
         </div>
 
-        <div className="flex flex-row justify-between h-auto">
-          <div className="w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col mr-5">
-            <h1 className="text-xl text-black font-bold m-2 flex flex-row">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <h1 className="text-xl text-black font-bold p-2 flex flex-row">
               <IoIosSunny className="mt-1 mr-2 ml-2" />
               Breakfast
             </h1>
             {renderMealSection("Break Fast", "Breakfast is a perfect way to fuel your morning and start the day!")}
           </div>
-          <div className="w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col mr-5">
-            <h1 className="text-xl text-black font-bold m-2 flex flex-row">
+          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <h1 className="text-xl text-black font-bold p-2 flex flex-row">
               <IoRestaurantOutline className="mt-1 mr-2 ml-2" />
               Lunch
             </h1>
@@ -210,16 +210,16 @@ const MyFood = () => {
           </div>
         </div>
 
-        <div className="flex flex-row mt-5 h-auto">
-          <div className="w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col mr-5">
-            <h1 className="text-xl text-black font-bold m-2 flex flex-row">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <h1 className="text-xl text-black font-bold p-2 flex flex-row">
               <IoFastFoodOutline className="mt-1 mr-2 ml-2" />
               Evening Snacks
             </h1>
             {renderMealSection("Evening Snacks", "Evening Snacks is a light and healthy snack to keep you going until dinner!")}
           </div>
-          <div className="w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col mr-5">
-            <h1 className="text-xl text-black font-bold m-2 flex flex-row">
+          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <h1 className="text-xl text-black font-bold p-2 flex flex-row">
               <IoRestaurantOutline className="mt-1 mr-2 ml-2" />
               Dinner
             </h1>
@@ -231,7 +231,7 @@ const MyFood = () => {
       <hr className="my-10" />
 
       <div className="flex flex-col">
-        <h1 className="text-2xl text-black font-bold mb-4">Our Recipes</h1>
+        <h1 className="text-2xl text-black font-bold py-4">Our Recipes</h1>
 
         <div className="flex flex-row justify-between">
           {renderRecipeCard()}

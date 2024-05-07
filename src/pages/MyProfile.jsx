@@ -87,8 +87,8 @@ const MyProfile = () => {
 
   return (
     <div className="min-h-auto flex justify-center items-center">
-      <div className="flex flex-col md:flex-row items-stretch w-full h-full">
-        <div className="w-full md:w-2/3 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+      <div className="flex flex-col md:flex-row items-stretch w-full h-full gap-4">
+        <div className="w-full md:w-4/6 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border border-gray-300">
           <div className="relative h-auto flex-grow">
             <img
               src={gymImage}
@@ -103,7 +103,7 @@ const MyProfile = () => {
           </div>
           <div className="p-8 flex-grow flex flex-col">
             <h1 className="text-3xl font-bold mb-2">User Name</h1>
-            <div className="flex justify-between m-6">
+            <div className="flex justify-between py-6">
               <div className="flex flex-col">
                 <span className="text-sm text-gray-700">Age</span>
                 <span className="text-lg font-semibold">25</span>
@@ -135,9 +135,10 @@ const MyProfile = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center w-full p-4 md:w-1/3">
-          <div className="w-full flex flex-col">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8 flex-grow">
+
+        <div className="flex justify-center w-full px-4 md:w-1/3 ">
+          <div className="w-full flex flex-col ">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8 flex-grow border border-gray-300">
               <div className="p-6 flex-grow flex flex-col">
                 <h1 className="text-xl font-bold mb-4">Goals</h1>
                 <div className="bg-gray-100 border border-gray-200 rounded-lg p-4 mb-4">
@@ -166,7 +167,7 @@ const MyProfile = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden flex-grow">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden flex-grow border border-gray-300">
               <div className="p-6 flex-grow flex flex-col">
                 <h1 className="text-xl font-bold mb-4">Achievements</h1>
                 <div className="bg-gray-100 border border-gray-200 rounded-lg p-4 mb-4">

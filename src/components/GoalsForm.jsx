@@ -176,7 +176,7 @@ const GoalsForm = () => {
           </label>
         </div>
 
-        <button className="w-full bg-[#fb5607] rounded-[8px] font-medium text-[#000000] px-[12px] py-[8px] mt-6 hover:bg-orange-600">
+        <button className="w-full bg-[#fb5607] rounded-[8px] font-medium text-gray-50 px-[12px] py-[8px] mt-6 hover:bg-orange-600">
           Save Changes
         </button>
       </form>

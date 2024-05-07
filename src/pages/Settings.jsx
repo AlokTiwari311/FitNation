@@ -10,7 +10,7 @@ const Settings = () => {
   return (
     <div className={`w-full flex flex-col gap-4 mt-8 ${activeForm ? "h-auto" : "h-screen"}`}>
       <button
-        className="w-full h-14 bg-white text-black flex justify-between items-center px-4 py-2 rounded-lg shadow-md hover:font-bold transition-colors duration-300"
+        className="w-full h-14 bg-white text-black flex justify-between border border-gray-200 items-center px-4 py-2 rounded-lg shadow-md hover:font-bold transition-colors duration-300"
         onClick={() =>
           setActiveForm((prev) => (prev === "profile" ? null : "profile"))
         }
@@ -25,7 +25,7 @@ const Settings = () => {
       {activeForm === "profile" && <ProfileForm />}
 
       <button
-        className="w-full h-14 bg-white text-black flex justify-between items-center px-4 py-2 rounded-lg shadow-md hover:font-bold transition-colors duration-300"
+        className="w-full h-14 bg-white text-black flex justify-between border border-gray-200 items-center px-4 py-2 rounded-lg shadow-md hover:font-bold transition-colors duration-300"
         onClick={() =>
           setActiveForm((prev) => (prev === "goals" ? null : "goals"))
         }
@@ -36,7 +36,7 @@ const Settings = () => {
       {activeForm === "goals" && <GoalsForm />}
 
       <button
-        className="w-full h-14 bg-white text-black flex justify-between items-center px-4 py-2 rounded-lg shadow-md hover:font-bold transition-colors duration-300"
+        className="w-full h-14 bg-white text-black flex justify-between border border-gray-200 items-center px-4 py-2 rounded-lg shadow-md hover:font-bold transition-colors duration-300"
         onClick={() =>
           setActiveForm((prev) => (prev === "food" ? null : "food"))
         }

@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Antonio&family=Oswald:wght@200..700&family=Six+Caps&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+    /* font-family: "Caveat"; */
+  }
 
 html,
 body {
@@ -119,3 +127,55 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+/* forlanding page */
+.strength_container{
+    border:2px solid red;
+   
+}
+.myfirstvideo{
+    height:100%;
+    width:100%; 
+    object-fit: cover;
+    }
+    /* from here */
+.myfont1{
+      
+      margin-left: auto;
+      margin-right: 50px;
+      font-family: "Oswald";
+      letter-spacing: -15px;
+      font-size: 16vw;
+      font-weight: 500;
+      color:white;
+    }
+    .myfont{
+        margin-top: -50px;
+      color:white;
+      font-family: "Oswald";
+      margin-left: 55px;
+      letter-spacing: -18px;
+      font-weight: 600;
+      font-size: 20vw;
+      
+      
+    }
+    
+    /* from here */
+    .container_margin{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* position:relative; */
+    }
+    .marquee_text{
+        font-family: "Oswald";
+        letter-spacing: -15px;
+        font-size: 16vw;
+        font-weight: 500;
+    }
+
+
+
+ 
+   

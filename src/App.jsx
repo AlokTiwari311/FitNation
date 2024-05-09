@@ -10,6 +10,7 @@ import FAQ from "./components/FAQ"
 import { useEffect, useState } from "react";
 import PrivateRoute from "./components/PrivateRoute";
 import Classes from "./components/Classes";
+import Landingpage from "./pages/Landingpage";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
+        <Route path="/landing" element={<Landingpage/>}/>
         <Route path="/about" element={<About isLoggedIn={isLoggedIn} />} />
         <Route
           path="/login"

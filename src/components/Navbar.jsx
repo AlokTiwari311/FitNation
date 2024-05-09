@@ -26,6 +26,9 @@ const Navbar = (props) => {
             <li className="hover:text-white ">
               <Link to="/contact">Contact</Link>
             </li>
+            <li className="hover:text-white ">
+              <Link to="/shop">Shop</Link>
+            </li>
             <li></li>
           </ul>
         </div>
@@ -74,6 +77,9 @@ const Navbar = (props) => {
                 <Link to="/">Contact</Link>
               </li>
               <li>
+                <Link to="/">Shop</Link>
+              </li>
+              <li>
                 {isLoggedIn && (
                   <Link to="/dashboard">
                     <button className="nav-btn text-white">Dashboard</button>
@@ -119,12 +125,12 @@ const Navbar = (props) => {
           {/* Login - SignUp - LogOut - Dashboard */}
           {!isLoggedIn && (
             <Link to="/login">
-              <button className="nav-btn  py-2 px-4 mx-1 text-gray-50 bg-[#fb5607] hover:bg-[#fb5607] hover:text-white rounded-md">Log in</button>
+              <button className="nav-btn  py-2 px-4 mx-1 text-gray-50 bg-[#fb5607] hover:bg-[#fb5407ea] hover:text-white rounded-md">Log in</button>
             </Link>
           )}
           {!isLoggedIn && (
             <Link to="/signup">
-              <button className="nav-btn  text-gray-50 bg-[#fb5607] py-2 px-4 mx-1 hover:bg-[#fb5607] hover:text-white rounded-md">Sign up</button>
+              <button className="nav-btn  text-gray-50 bg-[#fb5607] py-2 px-4 mx-1 hover:bg-[#fb5407ea] hover:text-white rounded-md">Sign up</button>
             </Link>
           )}
           {isLoggedIn && (

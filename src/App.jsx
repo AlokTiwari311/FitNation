@@ -10,6 +10,8 @@ import FAQ from "./components/FAQ"
 import { useEffect, useState } from "react";
 import PrivateRoute from "./components/PrivateRoute";
 import Classes from "./components/Classes";
+import Shop from "./pages/Shop";
+import AllProducts from "./components/AllProducts";
 
 
 function App() {
@@ -24,6 +26,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
         <Route path="/about" element={<About isLoggedIn={isLoggedIn} />} />
+        <Route path="/shop" element={<Shop isLoggedIn={isLoggedIn} />} />
+        <Route path='/allproducts' element={<AllProducts/>} />
+
         <Route
           path="/login"
           element={<Login setIsLoggedIn={setIsLoggedIn} />}

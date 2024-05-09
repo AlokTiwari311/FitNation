@@ -20,7 +20,7 @@ const Landing = () => {
                         <span className='text-[#fb5607]'>IT'S LIFE</span>
 
                     </h1>
-                    <motion.div whileInView={{opacity:1,x:0}}  
+                    <motion.div whileInView={{opacity:1,x:15}}  
                         animate={{x:-800}}
                         transition={{duration:2,delay:.09,ease:easeInOut}}
                     className='headline_wrapper '></motion.div>

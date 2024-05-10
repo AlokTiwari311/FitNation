@@ -10,9 +10,9 @@ import FAQ from "./components/FAQ"
 import { useEffect, useState } from "react";
 import PrivateRoute from "./components/PrivateRoute";
 import Classes from "./components/Classes";
+import Landingpage from "./pages/Landingpage";
 import Shop from "./pages/Shop";
 import AllProducts from "./components/AllProducts";
-
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -25,6 +25,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
+        <Route path="/landing" element={<Landingpage/>}/>
         <Route path="/about" element={<About isLoggedIn={isLoggedIn} />} />
         <Route path="/shop" element={<Shop isLoggedIn={isLoggedIn} />} />
         <Route path='/allproducts' element={<AllProducts/>} />

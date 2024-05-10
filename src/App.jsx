@@ -13,6 +13,9 @@ import Classes from "./components/Classes";
 import Landingpage from "./pages/Landingpage";
 import Shop from "./pages/Shop";
 import AllProducts from "./components/AllProducts";
+import Details from "./components/Details";
+import WishList from "./components/WishList";
+import Cart from "./components/Cart";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,6 +32,9 @@ function App() {
         <Route path="/about" element={<About isLoggedIn={isLoggedIn} />} />
         <Route path="/shop" element={<Shop isLoggedIn={isLoggedIn} />} />
         <Route path='/allproducts' element={<AllProducts/>} />
+        <Route path='/details' element={<Details/>} />
+        <Route path='/wishlist' element={<WishList/>} />
+        <Route path='/cart' element={<Cart/>} />
 
         <Route
           path="/login"

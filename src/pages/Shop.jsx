@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { AiFillStar, AiOutlineCar, AiOutlineCustomerService, AiOutlineHeart, AiOutlineSafetyCertificate, AiOutlineTruck } from 'react-icons/ai';
+import { AiFillStar, AiOutlineCustomerService, AiOutlineHeart, AiOutlineSafetyCertificate, AiOutlineShoppingCart, AiOutlineTruck } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+// import Veg from "../assets/WestIndia.jpeg"
 
 const Shop = () => {
   const [currentBanner, setCurrentBanner] = useState(1);
@@ -20,157 +21,9 @@ const Shop = () => {
     const fetchData = async () => {
       // Simulating fetch delay
       setTimeout(() => {
+        // fetch from database
         const fetchedProducts = [
-          {
-            title: "Product 1",
-            originalPrice: "100",
-            currentPrice: "80",
-            description: "Product 1 description",
-            image: "",
-            category: "equipment",
-            rating: "4.5",
-            attribute: "bestselling",
-          },
-          {
-            title: "Product 2",
-            originalPrice: "120",
-            currentPrice: "100",
-            description: "Product 2 description",
-            image: "",
-            category: "equipment",
-            rating: "4.2",
-            attribute: "bestselling",
-          },
-          {
-            title: "Product 3",
-            originalPrice: "80",
-            currentPrice: "60",
-            description: "Product 3 description",
-            image: "",
-            category: "equipment",
-            rating: "4.8",
-            attribute: "bestselling",
-          },
-          {
-            title: "Product 4",
-            originalPrice: "150",
-            currentPrice: "120",
-            description: "Product 4 description",
-            image: "",
-            category: "equipment",
-            rating: "4.0",
-            attribute: "bestselling",
-          },
-          {
-            title: "Product 5",
-            originalPrice: "90",
-            currentPrice: "70",
-            description: "Product 5 description",
-            image: "",
-            category: "equipment",
-            rating: "4.3",
-            attribute: "bestselling"
-          },
-          {
-            title: "Product 6",
-            originalPrice: "50",
-            currentPrice: "40",
-            description: "Product 6 description",
-            image: "",
-            category: "clothing",
-            rating: "4.7",
-            attribute: "",
-          },
-          {
-            title: "Product 7",
-            originalPrice: "70",
-            currentPrice: "50",
-            description: "Product 7 description",
-            image: "",
-            category: "clothing",
-            rating: "4.6",
-            attribute: "",
-          },
-          {
-            title: "Product 8",
-            originalPrice: "60",
-            currentPrice: "45",
-            description: "Product 8 description",
-            image: "",
-            category: "clothing",
-            rating: "4.9",
-            attribute: "bestselling"
-          },
-          {
-            title: "Product 9",
-            originalPrice: "80",
-            currentPrice: "60",
-            description: "Product 9 description",
-            image: "",
-            category: "clothing",
-            rating: "4.2",
-            attribute: "",
-          },
-          {
-            title: "Product 10",
-            originalPrice: "100",
-            currentPrice: "80",
-            description: "Product 10 description",
-            image: "",
-            category: "protein",
-            rating: "4.5",
-            attribute: "",
-          },
-          {
-            title: "Product 11",
-            originalPrice: "25",
-            currentPrice: "20",
-            description: "Product 11 description",
-            image: "",
-            category: "protein",
-            rating: "4.8",
-            attribute: "",
-          },
-          {
-            title: "Product 12",
-            originalPrice: "30",
-            currentPrice: "25",
-            description: "Product 12 description",
-            image: "",
-            category: "protein",
-            rating: "4.6",
-            attribute: "",
-          },
-          {
-            title: "Product 13",
-            originalPrice: "40",
-            currentPrice: "35",
-            description: "Product 13 description",
-            image: "",
-            category: "protein",
-            rating: "4.9",
-            attribute: "",
-          },
-          {
-            title: "Product 14",
-            originalPrice: "20",
-            currentPrice: "15",
-            description: "Product 14 description",
-            image: "",
-            category: "preworkout",
-            rating: "4.3",
-            attribute: "",
-          },
-          {
-            title: "Product 15",
-            originalPrice: "50",
-            currentPrice: "40",
-            description: "Product 15 description",
-            image: "",
-            category: "preworkout",
-            rating: "4.7",
-            attribute: "",
-          },
+          // fetch from database
         ];
         setProducts(fetchedProducts);
       }, 1000); // Simulating fetch delay of 1 second
@@ -207,6 +60,21 @@ const Shop = () => {
       </div>
 
       <div className='p-12 '>
+        <div className='flex flex-row justify-end px-10 gap-8'>
+          <Link to="/wishlist">
+            <div className='flex flex-col items-center w-16 bg-gray-100 hover:bg-gray-200 border border-gray-500 rounded-xl p-2'>
+              <AiOutlineHeart className='text-3xl text-red-600'/>
+              <h6 className='text-sm font-semibold'>Wishlist</h6>
+            </div>
+          </Link>
+          <Link to="/cart">
+            <div className='flex flex-col items-center w-16 bg-gray-100 hover:bg-gray-200 border border-gray-500 rounded-xl p-2'>
+              <AiOutlineShoppingCart className='text-3xl text-green-800'/>
+              <h6 className='text-sm font-semibold'>Cart</h6>
+            </div>
+          </Link>
+        </div>
+
         <div className='flex flex-row items-center'>
           <span className='bg-orange-600 w-3 h-6 mr-3'></span>
           <h1 className='text-xl font-semibold text-orange-600 '>This Month</h1>
@@ -221,7 +89,7 @@ const Shop = () => {
 
         <div className='p-4 flex flex-row justify-between gap-7'>
           {bestSellingProducts.map((product, index) => (
-            <ProductCard key={index} product={product} />
+            <ProductCard key={index} product={product} products={products}/>
           ))}
         </div>
       </div>
@@ -257,7 +125,7 @@ const Shop = () => {
         <h1 className='py-5 text-3xl font-bold text-black '>Explore Our Products</h1>
         <div className='p-4 flex flex-wrap justify-between gap-7'>
           {exploreProducts.map((product, index) => (
-            <ProductCard key={index} product={product} />
+            <ProductCard key={index} product={product} products={products}/>
           ))}
         </div>
         <div className="py-5 flex justify-center">
@@ -300,39 +168,39 @@ const Shop = () => {
   );
 };
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, products }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
-      className='relative p-2 bg-white shadow-md'
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <img src={product.image} alt="Product Photo" className='w-52 h-52 border border-gray-300' />
-      {isHovered && (
-        <button className='absolute top-44 left-2 right-2 flex items-center justify-center bg-gray-200 opacity-90 font-bold text-black h-10'>
-          Add to Cart
-        </button>
-      )}
-      <button className='absolute top-4 right-4 flex items-center justify-center bg-gray-100 rounded-full w-8 h-8'>
-        <AiOutlineHeart className='text-red-500' />
-      </button>
-      <div className='p-2'>
-        <h1 className='font-bold'>{product.title}</h1>
-        <h1 className='text-sm text-gray-500'>{product.category}</h1>
-        <div className='flex items-center mt-2 gap-1'>
-          <h1 className='font-bold text-md'>Rs.{product.currentPrice}</h1>
-          <h1 className='text-xs text-gray-400 line-through'>Rs.{product.originalPrice}</h1>
-          <h1 className='text-xs text-orange-400'>(Rs.{product.originalPrice - product.currentPrice} OFF)</h1>
-        </div>
-        <div className='flex items-center py-2'>
-          {[...Array(5)].map((_, index) => (
-            <h1 key={index} className='text-md text-yellow-400'><AiFillStar /></h1>
-          ))}
+    <Link to="/details" state={{product: product, products: products}}>
+      <div
+        className='relative p-2 bg-white shadow-md'
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <img src={product.image} alt="Product Photo" className='w-52 h-52 border border-gray-300' />
+        {isHovered && (
+          <button className='absolute top-44 left-2 right-2 flex items-center justify-center bg-gray-200 opacity-90 font-bold text-black h-10'>
+            View Details
+          </button>
+        )}
+
+        <div className='p-2'>
+          <h1 className='font-bold'>{product.title}</h1>
+          <h1 className='text-sm text-gray-500'>{product.category}</h1>
+          <div className='flex items-center mt-2 gap-1'>
+            <h1 className='font-bold text-md'>Rs.{product.currentPrice}</h1>
+            <h1 className='text-xs text-gray-400 line-through'>Rs.{product.originalPrice}</h1>
+            <h1 className='text-xs text-orange-400'>(Rs.{product.originalPrice - product.currentPrice} OFF)</h1>
+          </div>
+          <div className='flex items-center py-2'>
+            {[...Array(5)].map((_, index) => (
+              <h1 key={index} className='text-md text-yellow-400'><AiFillStar /></h1>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

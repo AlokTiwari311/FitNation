@@ -129,6 +129,13 @@ body {
 }
 
 /* forlanding page */
+.headline_wrapper{
+    height:10px;
+    background-color: black;
+    position:absolute;
+    top:32%;
+    width:105%;
+  }
 .strength_container{
     border:2px solid red;
    

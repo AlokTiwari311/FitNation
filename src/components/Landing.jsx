@@ -12,6 +12,20 @@ const Landing = () => {
     <div className='w-full'>
         {/* <div className='bg-black'> */}
             <div className='container_margin w-full  bg-black'>
+
+              {/*scroll line on text starts here */}
+            <div className='head_text_wrap  text-center relative'>
+                    <h1 className='text-white text-[11em] text-center tracking-[-1.02rem] mt-0 mb-0 font-bold leading-[96%] font-[Antonio]'>IT'S NOT FITNESS
+                        <br/>
+                        <span className='text-[#fb5607]'>IT'S LIFE</span>
+
+                    </h1>
+                    <motion.div whileInView={{opacity:1,x:0}}  
+                        animate={{x:-800}}
+                        transition={{duration:2,delay:.09,ease:easeInOut}}
+                    className='headline_wrapper '></motion.div>
+                </div>
+                  {/*scroll line on text ends  here */}
                 
                 <div  className=' h-screen w-full'>
                 <motion.video initial={{opacity:1}} 

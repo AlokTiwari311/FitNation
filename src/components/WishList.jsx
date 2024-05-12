@@ -6,6 +6,50 @@ const WishList = () => {
     // get from database
   const wishlist_products = [
     // fetch from database
+    {
+        id: "1",
+        title: "Product 1",
+        originalPrice: "100",
+        currentPrice: "80",
+        description: "Product 1 description",
+        image: "",
+        category: "equipment",
+        rating: "4.5",
+        attribute: "bestselling",
+    },
+    {
+        id: "2",
+        title: "Product 2",
+        originalPrice: "120",
+        currentPrice: "100",
+        description: "Product 2 description",
+        image: "",
+        category: "equipment",
+        rating: "4.2",
+        attribute: "bestselling",
+    },
+    {
+        id: "3",
+        title: "Product 3",
+        originalPrice: "100",
+        currentPrice: "80",
+        description: "Product 3 description",
+        image: "",
+        category: "equipment",
+        rating: "4.5",
+        attribute: "bestselling",
+    },
+    {
+        id: "4",
+        title: "Product 4",
+        originalPrice: "120",
+        currentPrice: "100",
+        description: "Product 4 description",
+        image: "",
+        category: "equipment",
+        rating: "4.2",
+        attribute: "bestselling",
+    },
   ];
 
   return (

@@ -6,6 +6,30 @@ const Cart = () => {
     
     const [cart_products, setCartProducts] = useState([
         //fetch from database
+        {
+            id: "1",
+            title: "Product 1",
+            originalPrice: "100",
+            currentPrice: "80",
+            description: "Product 1 description",
+            image: "",
+            category: "equipment",
+            rating: "4.5",
+            attribute: "bestselling",
+            quantity:"1",
+        },
+        {
+            id: "2",
+            title: "Product 2",
+            originalPrice: "120",
+            currentPrice: "100",
+            description: "Product 2 description",
+            image: "",
+            category: "equipment",
+            rating: "4.2",
+            attribute: "bestselling",
+            quantity:"1",
+        },
     ]);
 
     const [subtotal, setSubtotal] = useState(0);

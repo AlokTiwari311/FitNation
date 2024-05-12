@@ -13,6 +13,7 @@ const Shop = () => {
     }, 3000);
 
     return () => clearInterval(interval);
+
   }, []);
 
   useEffect(() => {
@@ -23,7 +24,141 @@ const Shop = () => {
       setTimeout(() => {
         // fetch from database
         const fetchedProducts = [
-          // fetch from database
+          {
+            title: "Product 1",
+            originalPrice: "100",
+            currentPrice: "80",
+            description: "Product 1 description",
+            image: "product1.jpg",
+            category: "equipment",
+            Rating: "4.5",
+          },
+          {
+            title: "Product 2",
+            originalPrice: "120",
+            currentPrice: "100",
+            description: "Product 2 description",
+            image: "product2.jpg",
+            category: "equipment",
+            rating: "4.2",
+          },
+          {
+            title: "Product 3",
+            originalPrice: "80",
+            currentPrice: "60",
+            description: "Product 3 description",
+            image: "product3.jpg",
+            category: "equipment",
+            rating: "4.8",
+          },
+          {
+            title: "Product 4",
+            originalPrice: "150",
+            currentPrice: "120",
+            description: "Product 4 description",
+            image: "product4.jpg",
+            category: "equipment",
+            rating: "4.0",
+          },
+          {
+            title: "Product 5",
+            originalPrice: "90",
+            currentPrice: "70",
+            description: "Product 5 description",
+            image: "product5.jpg",
+            category: "equipment",
+            rating: "4.3",
+          },
+          {
+            title: "Product 6",
+            originalPrice: "50",
+            currentPrice: "40",
+            description: "Product 6 description",
+            image: "product6.jpg",
+            category: "clothing",
+            rating: "4.7",
+          },
+          {
+            title: "Product 7",
+            originalPrice: "70",
+            currentPrice: "50",
+            description: "Product 7 description",
+            image: "product7.jpg",
+            category: "clothing",
+            Rating: "4.6",
+          },
+          {
+            title: "Product 8",
+            originalPrice: "60",
+            currentPrice: "45",
+            description: "Product 8 description",
+            image: "product8.jpg",
+            category: "clothing",
+            Rating: "4.9",
+          },
+          {
+            title: "Product 9",
+            originalPrice: "80",
+            currentPrice: "60",
+            description: "Product 9 description",
+            image: "product9.jpg",
+            category: "clothing",
+            Rating: "4.2",
+          },
+          {
+            title: "Product 10",
+            originalPrice: "100",
+            currentPrice: "80",
+            description: "Product 10 description",
+            image: "product10.jpg",
+            category: "clothing",
+            Rating: "4.5",
+          },
+          {
+            title: "Product 11",
+            originalPrice: "25",
+            currentPrice: "20",
+            description: "Product 11 description",
+            image: "product11.jpg",
+            category: "supplements",
+            Rating: "4.8",
+          },
+          {
+            title: "Product 12",
+            originalPrice: "30",
+            currentPrice: "25",
+            description: "Product 12 description",
+            image: "product12.jpg",
+            category: "supplements",
+            Rating: "4.6",
+          },
+          {
+            title: "Product 13",
+            originalPrice: "40",
+            currentPrice: "35",
+            description: "Product 13 description",
+            image: "product13.jpg",
+            category: "supplements",
+            Rating: "4.9",
+          },
+          {
+            title: "Product 14",
+            originalPrice: "20",
+            currentPrice: "15",
+            description: "Product 14 description",
+            image: "product14.jpg",
+            category: "supplements",
+            Rating: "4.3",
+          },
+          {
+            title: "Product 15",
+            originalPrice: "50",
+            currentPrice: "40",
+            description: "Product 15 description",
+            image: "product15.jpg",
+            category: "supplements",
+            Rating: "4.7",
+          },
         ];
         setProducts(fetchedProducts);
       }, 1000); // Simulating fetch delay of 1 second

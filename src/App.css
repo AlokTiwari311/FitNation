@@ -182,7 +182,13 @@ body {
         font-weight: 500;
     }
 
-
+.outline-text {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: white;
+    text-shadow: #2C2B2A;
+}
+      
 
  
    

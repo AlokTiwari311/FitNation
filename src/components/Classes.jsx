@@ -1,5 +1,7 @@
 
 import React, { useEffect } from 'react';
+import { easeInOut, motion } from 'framer-motion'
+
 
 const Classes = () => {
     useEffect(() => {
@@ -60,61 +62,54 @@ const Classes = () => {
             name: "Dance Mix",
             image: "https://assets-global.website-files.com/64d3dd9edfb41666c35b15d4/64d3dd9edfb41666c35b1732_Nike_HOI_50th_SU22_FL1_5393.webp"
         },
-        {
-            name: "Workout ",
-            image: "https://assets-global.website-files.com/64d3dd9edfb41666c35b15d4/64d3dd9edfb41666c35b1694_Copy%2520of%2520211023_NikeCHI_PlayNewKids_Beauty-26-p-1080.webp"
-        },
-        {
-            name: "WarmUp",
-            image: "https://assets-global.website-files.com/64d3dd9edfb41666c35b15d4/64d3dd9edfb41666c35b163a_Copy-of-IMG_1179.webp"
-        },
-        {
-            name: "NYFC Popup",
-            image: "https://assets-global.website-files.com/64d3dd9edfb41666c35b15d4/64d3dd9edfb41666c35b1712_AM704009.webp"
-        }
+
     ];
 
 
     return (
-        <div className="w-full min-h-[210vh] class_image">
-            <div className="fixed-image hidden group bg-inherit"></div>
+        <div className="w-full min-h-[150vh] class_image ">
 
-            <section className="h-4/5 pt-40 w-full relative pb-16 bg-inherit" id="projectSection">
-                <div className="border-t-2 border-gray-400 flex items-center py-0 px-8">
+            <section className="h-4/5  w-full relative pb-10 bg-inherit  " id="projectSection">
+                <div className="border-t-2 border-white flex items-center py-0 px-8">
                     <p className="text-uppercase font-light text-lg w-full inline-block text-right">featured projects</p>
                 </div>
+                {/* main bug */}
+                <div className='flex justify-center items-center gap-6 h-[140vh]'>
+                    <div className=" group bg-inherit w-1/4 h-[60vh] rounded-md border-2  z-30 absolute left-20 top-20 fixed-image  "></div>
+                    <ul className="elem-container w-7/12  absolute bg-transparent right-0  overflow-y-scroll">
+                        <p className='text-lg text-white mb-4 ml-10'>Online Classes</p>
+                        {projects.map((project, index) => (
+                            <li key={index} className="elem border-b-2 border-white" data-image={project.image}>
+                                <div className="overlay absolute h-full w-full bg-orange-500 top-[-100%] left-0 transition-all duration-300 group-hover:top-5"></div>
+                                <a href="#" className="text-4xl font-semibold text-white z-10 w-full group-hover:underline">
+                                    {project.name}
+                                </a>
+                                <div className=' mx-auto w-full flex  justify-between class_details'>
+                                    <span className='text-center '>
+                                        <p className='text-xl font-medium text-gray-600 '>GOAL</p>
+                                        <p className='text-xl font-medium text-white '>Fit</p>
+                                    </span>
+                                    <span className='text-center'>
+                                        <p className='text-xl font-medium text-gray-600 '>GOAL</p>
+                                        <p className='text-xl font-medium text-white '>Fit</p>
+                                    </span>
+                                    <span className='text-center'>
+                                        <p className='text-xl font-medium text-gray-600 '>GOAL</p>
+                                        <p className='text-xl font-medium text-white '>Fit</p>
+                                    </span>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 
-                <ul className="elem-container w-8/12 absolute bg-transparent right-0">
-                    <p className='text-2xl text-white mb-4 ml-10'>Hello guys</p>
-                    {projects.map((project, index) => (
-                        <li key={index} className="elem border-b-2 border-white" data-image={project.image}>
-                            <div className="overlay absolute h-full w-full bg-orange-500 top-[-100%] left-0 transition-all duration-300 group-hover:top-0"></div>
-                            <a href="#" className="text-4xl font-bold text-white z-10 w-full group-hover:underline">
-                                {project.name}
-                            </a>
-                            <div className=' mx-auto w-full flex  justify-between alok'>
-                                <span className='text-center '>
-                                    <p className='text-xl font-medium text-gray-600 '>GOAL</p>
-                                    <p className='text-xl font-medium text-white '>Fit</p>
-                                </span>
-                                <span className='text-center'>
-                                    <p className='text-xl font-medium text-gray-600 '>GOAL</p>
-                                    <p className='text-xl font-medium text-white '>Fit</p>
-                                </span>
-                                <span className='text-center'>
-                                    <p className='text-xl font-medium text-gray-600 '>GOAL</p>
-                                    <p className='text-xl font-medium text-white '>Fit</p>
-                                </span>
-
-
-
-                            </div>
-                        </li>
-                    ))}
-                </ul>
             </section>
         </div>
+
+
     );
 };
 
 export default Classes;
+
+

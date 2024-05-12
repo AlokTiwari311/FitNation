@@ -28,13 +28,12 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
-        <Route path="/landing" element={<Landingpage/>}/>
         <Route path="/about" element={<About isLoggedIn={isLoggedIn} />} />
         <Route path="/shop" element={<Shop isLoggedIn={isLoggedIn} />} />
-        <Route path='/allproducts' element={<AllProducts/>} />
-        <Route path='/details' element={<Details/>} />
-        <Route path='/wishlist' element={<WishList/>} />
-        <Route path='/cart' element={<Cart/>} />
+        <Route path='/allproducts' element={<AllProducts />} />
+        <Route path='/details' element={<Details />} />
+        <Route path='/wishlist' element={<WishList />} />
+        <Route path='/cart' element={<Cart />} />
 
         <Route
           path="/login"
@@ -45,9 +44,6 @@ function App() {
           path="/signup"
           element={<Signup setIsLoggedIn={setIsLoggedIn} />}
         />
-
-        <Route path="/faq" element={<FAQ isLoggedIn={isLoggedIn} />} />
-        <Route path="/classes" element={<Classes isLoggedIn={isLoggedIn} />} />
 
         <Route
           path="/dashboard"

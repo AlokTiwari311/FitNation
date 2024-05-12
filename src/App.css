@@ -3,12 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     margin: 0px;
-    padding:0px;
+    padding: 0px;
     box-sizing: border-box;
-    /* font-family: "Caveat"; */
-  }
+}
 
 html,
 body {
@@ -18,7 +17,7 @@ body {
 
 html,
 body {
-    background-color: #2C2B2A;
+    background-color: #000000;
 }
 
 .projectSection {
@@ -27,6 +26,7 @@ body {
     width: 100vw;
     position: relative;
     padding-bottom: 4vw;
+
 }
 
 .title {
@@ -45,7 +45,7 @@ body {
 }
 
 .elem {
-    height: 25vh;
+    height: 20vh;
     width: 100%;
     position: relative;
     display: flex;
@@ -60,7 +60,7 @@ body {
     width: 100%;
     position: absolute;
     background-color: #FB5607;
-    top: -100%;
+    /* top: -100%; */
     left: 0;
     transition: all 0.3s ease;
 }
@@ -79,35 +79,34 @@ body {
 }
 
 .fixed-image {
-    position: fixed !important;
-    z-index: 99;
     width: 25vw;
     height: 30vw;
     border-radius: 12px;
-    top: 28%;
     background-color: #fe330a;
-    left: 6%;
     background-size: cover;
     background-position: center;
+    /* overflow: hidden; */
 
 }
+
+
 
 .projectSection .nav-link {
     margin: 3vw;
 }
 
-.alok {
+.class_details {
 
     opacity: 0;
     z-index: 40;
 }
 
-.elem .alok {
+.elem .class_details {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
 }
 
-.elem:hover .alok {
+.elem:hover .class_details {
     opacity: 1;
 }
 
@@ -129,66 +128,60 @@ body {
 }
 
 /* forlanding page */
-.headline_wrapper{
-    height:10px;
+.headline_wrapper {
+    height: 10px;
     background-color: black;
-    position:absolute;
-    top:32%;
-    width:105%;
-  }
-.strength_container{
-    border:2px solid red;
-   
+    position: absolute;
+    top: 32%;
+    width: 105%;
 }
-.myfirstvideo{
-    height:100%;
-    width:100%; 
+
+.strength_container {
+    border: 2px solid rgb(0, 0, 0);
+
+}
+
+.myfirstvideo {
+    height: 100%;
+    width: 100%;
     object-fit: cover;
-    }
-    /* from here */
-.myfont1{
-      
-      margin-left: auto;
-      margin-right: 50px;
-      font-family: "Oswald";
-      letter-spacing: -15px;
-      font-size: 16vw;
-      font-weight: 500;
-      color:white;
-    }
-    .myfont{
-        margin-top: -50px;
-      color:white;
-      font-family: "Oswald";
-      margin-left: 55px;
-      letter-spacing: -18px;
-      font-weight: 600;
-      font-size: 20vw;
-      
-      
-    }
-    
-    /* from here */
-    .container_margin{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      /* position:relative; */
-    }
-    .marquee_text{
-        font-family: "Oswald";
-        letter-spacing: -15px;
-        font-size: 16vw;
-        font-weight: 500;
-    }
-
-.outline-text {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: white;
-    text-shadow: #2C2B2A;
 }
-      
 
- 
-   
+/* from here */
+.myfont1 {
+
+    margin-left: auto;
+    margin-right: 50px;
+    font-family: "Oswald";
+    letter-spacing: -15px;
+    font-size: 16vw;
+    font-weight: 500;
+    color: white;
+}
+
+.myfont {
+    margin-top: -50px;
+    color: white;
+    font-family: "Oswald";
+    margin-left: 55px;
+    letter-spacing: -18px;
+    font-weight: 600;
+    font-size: 20vw;
+
+
+}
+
+/* from here */
+.container_margin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* position:relative; */
+}
+
+.marquee_text {
+    font-family: "Oswald";
+    letter-spacing: -15px;
+    font-size: 16vw;
+    font-weight: 500;
+}

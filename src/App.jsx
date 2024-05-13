@@ -9,13 +9,12 @@ import About from "./pages/About";
 import FAQ from "./components/FAQ"
 import { useEffect, useState } from "react";
 import PrivateRoute from "./components/PrivateRoute";
-import Classes from "./components/Classes";
-import Landingpage from "./pages/Landingpage";
 import Shop from "./pages/Shop";
 import AllProducts from "./components/AllProducts";
 import Details from "./components/Details";
 import WishList from "./components/WishList";
 import Cart from "./components/Cart";
+import Footer from "./components/Footer";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,7 +22,7 @@ function App() {
   const isDashboardPage = location.pathname === "/dashboard";
 
   return (
-    <div className="w-screen h-screen flex flex-col">
+    <div className="w-screen flex flex-col">
       {!isDashboardPage && <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
 
       <Routes>
@@ -54,6 +53,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer />
 
     </div>
   );

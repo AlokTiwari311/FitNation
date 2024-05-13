@@ -57,7 +57,7 @@ const MyFood = () => {
     const mealItems = meals[mealType];
     if (mealItems.length === 0) {
       return (
-        <div className="bg-gray-100 rounded-lg p-2 m-2 text-gray-700">
+        <div className="bg-zinc-800 rounded-lg p-2 m-2 text-orange-600">
           {message}
         </div>
       );
@@ -65,7 +65,7 @@ const MyFood = () => {
       return mealItems.map((meal, index) => (
         <div
           key={index}
-          className="bg-gray-100 rounded-lg p-2 m-2 text-gray-700"
+          className="bg-zinc-800 rounded-lg p-2 m-2 text-orange-600"
         >
           <span>{meal.foodItem}</span> - {meal.amount} grams
         </div>
@@ -75,15 +75,15 @@ const MyFood = () => {
 
   const renderRecipeCard = () => {
     return (
-      <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col mr-5 h-auto">
+      <div className="w-full sm:w-1/2 bg-zinc-800 text-white rounded-lg shadow-lg overflow-hidden flex flex-col mr-5 h-auto">
         <div className="p-4 h-5/6">
           <img
             src={Recipe1Image}
             alt="Recipe 1"
-            className="w-full h-40 object-cover"
+            className="w-full h-40 object-cover rounded-lg shadow-lg overflow-hidden"
           />
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl text-black font-bold mt-4">
+            <h1 className="text-2xl text-orange-600 font-bold mt-4">
               Recipe 1
             </h1>
             <button className="bg-orange-500 text-white font-bold py-1 px-2 rounded shadow hover:bg-orange-600 transition duration-300">
@@ -111,40 +111,40 @@ const MyFood = () => {
   return (
     <div className="h-auto flex flex-col">
       <div>
-        <h1 className="text-2xl text-black font-bold py-4">
+        <h1 className="text-2xl text-orange-600 font-bold py-4">
           Your Food Preference
         </h1>
         <div className="flex flex-col sm:flex-row justify-between gap-5">
-          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-80 mb-5 sm:mb-0">
-            <div className="p-4 h-5/6">
+          <div className="w-full sm:w-1/2 bg-zinc-800  rounded-lg shadow-lg overflow-hidden flex flex-col h-80 mb-5 sm:mb-0">
+            <div className="p-4 h-5/6 ">
               <img
                 src={
                   dietPreference === "Vegetarian"
                     ? Veg
                     : dietPreference === "Non Vegetarian"
-                    ? NonVeg
-                    : Egg
+                      ? NonVeg
+                      : Egg
                 }
                 alt={dietPreference}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-lg"
               />
-              <h1 className="text-2xl text-black font-bold m-2">
+              <h1 className="text-2xl text-white font-bold m-2">
                 {dietPreference}
               </h1>
             </div>
           </div>
 
-          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col relative">
+          <div className="w-full sm:w-1/2 bg-zinc-800 rounded-lg shadow-lg overflow-hidden flex flex-col relative">
             {preferredCuisine.length > 1 && (
               <>
                 <button
-                  className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-200 text-gray-700 rounded-full p-2 hover:bg-gray-300 hover:text-gray-800 transition duration-300 border border-gray-300"
+                  className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-100 text-orange-800 rounded-full p-2 hover:bg-gray-300 hover:text-gray-800 transition duration-300 border border-gray-300"
                   onClick={handlePrevCuisine}
                 >
                   <BsArrowLeft />
                 </button>
                 <button
-                  className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-200 text-gray-700 rounded-full p-2 hover:bg-gray-300 hover:text-gray-800 transition duration-300 border border-gray-300"
+                  className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-100 text-orange-800 rounded-full p-2 hover:bg-gray-300 hover:text-gray-800 transition duration-300 border border-gray-300"
                   onClick={handleNextCuisine}
                 >
                   <BsArrowRight />
@@ -152,25 +152,25 @@ const MyFood = () => {
               </>
             )}
             <div className="h-80">
-              <div className="p-4 h-5/6">
+              <div className="p-4 h-5/6 ">
                 <img
                   src={
                     preferredCuisine[currentCuisineIndex] === "North Indian"
                       ? North
                       : preferredCuisine[currentCuisineIndex] === "South Indian"
-                      ? South
-                      : preferredCuisine[currentCuisineIndex] === "East Indian"
-                      ? East
-                      : preferredCuisine[currentCuisineIndex] === "West Indian"
-                      ? West
-                      : preferredCuisine[currentCuisineIndex] === "Chinese"
-                      ? Chinese
-                      : Continental
+                        ? South
+                        : preferredCuisine[currentCuisineIndex] === "East Indian"
+                          ? East
+                          : preferredCuisine[currentCuisineIndex] === "West Indian"
+                            ? West
+                            : preferredCuisine[currentCuisineIndex] === "Chinese"
+                              ? Chinese
+                              : Continental
                   }
                   alt={preferredCuisine[currentCuisineIndex]}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-lg "
                 />
-                <h1 className="text-2xl text-black font-bold m-2">
+                <h1 className="text-2xl  font-bold m-2 text-white">
                   {preferredCuisine[currentCuisineIndex]}
                 </h1>
               </div>
@@ -183,7 +183,7 @@ const MyFood = () => {
 
       <div className="flex flex-col gap-4">
         <div className="flex justify-between items-center py-4">
-          <h1 className="text-2xl text-black font-bold">Todays Intake</h1>
+          <h1 className="text-2xl text-orange-600 font-bold">Todays Intake</h1>
           <button
             className="flex items-center bg-orange-500 text-white font-bold py-1 px-4 rounded-full shadow hover:bg-orange-600 transition duration-300"
             onClick={handleAddMeal}
@@ -194,15 +194,15 @@ const MyFood = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-            <h1 className="text-xl text-black font-bold p-2 flex flex-row">
+          <div className="w-full sm:w-1/2 bg-zinc-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <h1 className="text-xl text-white font-bold p-2 flex flex-row">
               <IoIosSunny className="mt-1 mr-2 ml-2" />
               Breakfast
             </h1>
             {renderMealSection("Break Fast", "Breakfast is a perfect way to fuel your morning and start the day!")}
           </div>
-          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-            <h1 className="text-xl text-black font-bold p-2 flex flex-row">
+          <div className="w-full sm:w-1/2 bg-zinc-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <h1 className="text-xl text-white font-bold p-2 flex flex-row">
               <IoRestaurantOutline className="mt-1 mr-2 ml-2" />
               Lunch
             </h1>
@@ -211,15 +211,15 @@ const MyFood = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-            <h1 className="text-xl text-black font-bold p-2 flex flex-row">
+          <div className="w-full sm:w-1/2 bg-zinc-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <h1 className="text-xl text-white font-bold p-2 flex flex-row">
               <IoFastFoodOutline className="mt-1 mr-2 ml-2" />
               Evening Snacks
             </h1>
             {renderMealSection("Evening Snacks", "Evening Snacks is a light and healthy snack to keep you going until dinner!")}
           </div>
-          <div className="w-full sm:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-            <h1 className="text-xl text-black font-bold p-2 flex flex-row">
+          <div className="w-full sm:w-1/2 bg-zinc-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
+            <h1 className="text-xl text-white font-bold p-2 flex flex-row">
               <IoRestaurantOutline className="mt-1 mr-2 ml-2" />
               Dinner
             </h1>
@@ -230,10 +230,10 @@ const MyFood = () => {
 
       <hr className="my-10" />
 
-      <div className="flex flex-col">
-        <h1 className="text-2xl text-black font-bold py-4">Our Recipes</h1>
+      <div className="flex flex-col ">
+        <h1 className="text-2xl  text-orange-600 font-bold py-4">Our Recipes</h1>
 
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-between text-black">
           {renderRecipeCard()}
         </div>
       </div>

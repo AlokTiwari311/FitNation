@@ -76,7 +76,7 @@ const Classes = () => {
                 {/* main bug */}
                 <div className='flex justify-center items-center gap-6 h-[140vh]'>
                     <div className=" group bg-inherit w-1/4 h-[60vh] rounded-md border-2  z-30 absolute left-20 top-20 fixed-image  "></div>
-                    <ul className="elem-container w-7/12  absolute bg-transparent right-0  overflow-y-scroll">
+                    <ul className="elem-container w-7/12  absolute bg-transparent right-0  ">
                         <p className='text-lg text-white mb-4 ml-10'>Online Classes</p>
                         {projects.map((project, index) => (
                             <li key={index} className="elem border-b-2 border-white" data-image={project.image}>

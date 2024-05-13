@@ -15,7 +15,6 @@ const Cart = () => {
             image: "",
             category: "equipment",
             rating: "4.5",
-            attribute: "bestselling",
             quantity:"1",
         },
         {
@@ -27,7 +26,6 @@ const Cart = () => {
             image: "",
             category: "equipment",
             rating: "4.2",
-            attribute: "bestselling",
             quantity:"1",
         },
     ]);

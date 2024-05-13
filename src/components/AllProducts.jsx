@@ -9,7 +9,7 @@ const AllProducts = () => {
   let filteredProducts = [];
 
   if (location.state.attribute) {
-    filteredProducts = products.filter(product => product.attribute === location.state.attribute);
+    filteredProducts = products.filter(product => product.rating >= 4.5);
   } else if (location.state.category) {
     filteredProducts = products.filter(product => product.category === location.state.category);
   } else {
@@ -98,10 +98,10 @@ const ProductCard = ({ product, products }) => {
             <h1 className='text-xs text-gray-400 line-through'>Rs.{product.originalPrice}</h1>
             <h1 className='text-xs text-orange-400'>(Rs.{product.originalPrice - product.currentPrice} OFF)</h1>
           </div>
-          <div className='flex items-center py-2'>
-            {[...Array(5)].map((_, index) => (
-              <h1 key={index} className='text-md text-yellow-400'><AiFillStar /></h1>
-            ))}
+          <div className='flex flex-row gap-1 items-center py-2'>
+            <h1 className="text-md text-black">( {product.rating} </h1>
+            <AiFillStar className='text-lg text-yellow-400'/>
+            <h1 className="text-md text-black">)</h1>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ const Shop = () => {
             description: "Product 1 description",
             image: "product1.jpg",
             category: "equipment",
-            Rating: "4.5",
+            rating: "4.5",
           },
           {
             title: "Product 2",
@@ -85,7 +85,7 @@ const Shop = () => {
             description: "Product 7 description",
             image: "product7.jpg",
             category: "clothing",
-            Rating: "4.6",
+            rating: "4.6",
           },
           {
             title: "Product 8",
@@ -94,7 +94,7 @@ const Shop = () => {
             description: "Product 8 description",
             image: "product8.jpg",
             category: "clothing",
-            Rating: "4.9",
+            rating: "4.9",
           },
           {
             title: "Product 9",
@@ -103,7 +103,7 @@ const Shop = () => {
             description: "Product 9 description",
             image: "product9.jpg",
             category: "clothing",
-            Rating: "4.2",
+            rating: "4.2",
           },
           {
             title: "Product 10",
@@ -112,7 +112,7 @@ const Shop = () => {
             description: "Product 10 description",
             image: "product10.jpg",
             category: "clothing",
-            Rating: "4.5",
+            rating: "4.5",
           },
           {
             title: "Product 11",
@@ -120,8 +120,8 @@ const Shop = () => {
             currentPrice: "20",
             description: "Product 11 description",
             image: "product11.jpg",
-            category: "supplements",
-            Rating: "4.8",
+            category: "preworkout",
+            rating: "4.8",
           },
           {
             title: "Product 12",
@@ -129,8 +129,8 @@ const Shop = () => {
             currentPrice: "25",
             description: "Product 12 description",
             image: "product12.jpg",
-            category: "supplements",
-            Rating: "4.6",
+            category: "protein",
+            rating: "4.6",
           },
           {
             title: "Product 13",
@@ -138,8 +138,8 @@ const Shop = () => {
             currentPrice: "35",
             description: "Product 13 description",
             image: "product13.jpg",
-            category: "supplements",
-            Rating: "4.9",
+            category: "preworkout",
+            rating: "4.9",
           },
           {
             title: "Product 14",
@@ -147,8 +147,8 @@ const Shop = () => {
             currentPrice: "15",
             description: "Product 14 description",
             image: "product14.jpg",
-            category: "supplements",
-            Rating: "4.3",
+            category: "preworkout",
+            rating: "4.3",
           },
           {
             title: "Product 15",
@@ -156,8 +156,8 @@ const Shop = () => {
             currentPrice: "40",
             description: "Product 15 description",
             image: "product15.jpg",
-            category: "supplements",
-            Rating: "4.7",
+            category: "protein",
+            rating: "4.7",
           },
         ];
         setProducts(fetchedProducts);
@@ -167,7 +167,7 @@ const Shop = () => {
     fetchData();
   }, []);
 
-  const bestSellingProducts = products.filter(product => product.attribute === "bestselling").slice(0, 5);
+  const bestSellingProducts = products.filter(product => product.rating >= 4.5).slice(0, 5);
   const exploreProducts = products.filter(product => product).slice(0, 10);
 
   return (
@@ -328,10 +328,10 @@ const ProductCard = ({ product, products }) => {
             <h1 className='text-xs text-gray-400 line-through'>Rs.{product.originalPrice}</h1>
             <h1 className='text-xs text-orange-400'>(Rs.{product.originalPrice - product.currentPrice} OFF)</h1>
           </div>
-          <div className='flex items-center py-2'>
-            {[...Array(5)].map((_, index) => (
-              <h1 key={index} className='text-md text-yellow-400'><AiFillStar /></h1>
-            ))}
+          <div className='flex flex-row gap-1 items-center py-2'>
+            <h1 className="text-md text-black">( {product.rating} </h1>
+            <AiFillStar className='text-lg text-yellow-400'/>
+            <h1 className="text-md text-black">)</h1>
           </div>
         </div>
       </div>

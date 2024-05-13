@@ -15,7 +15,6 @@ const WishList = () => {
         image: "",
         category: "equipment",
         rating: "4.5",
-        attribute: "bestselling",
     },
     {
         id: "2",
@@ -26,7 +25,6 @@ const WishList = () => {
         image: "",
         category: "equipment",
         rating: "4.2",
-        attribute: "bestselling",
     },
     {
         id: "3",
@@ -37,7 +35,6 @@ const WishList = () => {
         image: "",
         category: "equipment",
         rating: "4.5",
-        attribute: "bestselling",
     },
     {
         id: "4",
@@ -48,7 +45,6 @@ const WishList = () => {
         image: "",
         category: "equipment",
         rating: "4.2",
-        attribute: "bestselling",
     },
   ];
 
@@ -100,10 +96,10 @@ const ProductCard = ({ product, products }) => {
             <h1 className='text-xs text-gray-400 line-through'>Rs.{product.originalPrice}</h1>
             <h1 className='text-xs text-orange-400'>(Rs.{product.originalPrice - product.currentPrice} OFF)</h1>
           </div>
-          <div className='flex items-center py-2'>
-            {[...Array(5)].map((_, index) => (
-              <h1 key={index} className='text-md text-yellow-400'><AiFillStar /></h1>
-            ))}
+          <div className='flex flex-row gap-1 items-center py-2'>
+            <h1 className="text-md text-black">( {product.rating} </h1>
+            <AiFillStar className='text-lg text-yellow-400'/>
+            <h1 className="text-md text-black">)</h1>
           </div>
         </div>
       </div>

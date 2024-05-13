@@ -47,7 +47,7 @@ const Landing = () => {
         transition={{ opacity: 1, duration: 5, delay: 5 }} className='h-[100vh] b w-full bg-orange-600 relative strength_container'>
         {/* https://design2seo.com/assets/blog/svg-clipping/video_waves3.mp4 */}
         <video src="/videos/25fps.mp4" className="w-[100%] h-[100%]   object-cover overflow-hidden" muted loop autoPlay />
-        <div className='w-[100%] h-screen absolute  top-[-2px]  right-2 flex flex-col mix-blend-multiply bg-black '>
+        <div className='w-[100%] h-screen absolute  top-[-2px]  flex flex-col mix-blend-multiply bg-black '>
           <motion.h1 whileInView={{ opacity: 1, x: 0 }} initial={{ opacity: 0, x: -550 }}
             transition={{ duration: 3, delay: .03, ease: easeInOut }}
             className='myfont1 '>FIND YOUR</motion.h1>

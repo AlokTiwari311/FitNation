@@ -17,6 +17,7 @@ import Details from "./components/Details";
 import WishList from "./components/WishList";
 import Cart from "./components/Cart";
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -56,6 +57,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer />
 
     </div>
   );

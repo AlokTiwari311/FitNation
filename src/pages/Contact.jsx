@@ -41,7 +41,7 @@ const Contact = () => {
     }
 
     return (
-        <div className='bg-[#F8F8F3] py-24'>
+        <div className='bg-[#F8F8F3] py-24 pt-[110px]'>
             <ToastContainer />
             <div className='flex flex-col items-center'>
                 <h1 className='text-2xl md:text-4xl lg:text-6xl font-bold'>Contact Us</h1>

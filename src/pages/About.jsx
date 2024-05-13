@@ -56,7 +56,7 @@ const About = () => {
     };
     
     return (
-        <div className='flex flex-col bg-[#F8F8F3]'>
+        <div className='flex flex-col bg-[#F8F8F3] pt-[20px]'>
             <div className='py-24'>
                 <span className='flex justify-center w-full'>
                     <img src={Banner1} alt="Banner1" />

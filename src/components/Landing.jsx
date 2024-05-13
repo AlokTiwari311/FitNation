@@ -1,6 +1,7 @@
 import React from 'react'
 import { easeInOut, motion } from 'framer-motion'
 import Testimonialpage from '../pages/Testimonialpage'
+import HeroPage from '../pages/HeroPage'
 
 
 
@@ -10,6 +11,7 @@ import Testimonialpage from '../pages/Testimonialpage'
 const Landing = () => {
   return (
     <div className='w-full  bg-black  relative pb-24' >
+      <HeroPage/>
       {/* <div className='bg-black'> */}
       <div className='container_margin w-full  bg-black'>
 

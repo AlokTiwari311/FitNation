@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
-const Marquee=()=> {
+const Marquee = () => {
   return (
-    <div className=" w-full py-[20vw] md:py-[10vw] lg:py-[5vw]  bg-[#ffffff]">
-      <div className="text-[#000000] border-t-2 border-b-2 border-[#fb5607] flex overflow-hidden whitespace-nowrap">
+    <div className=" w-full py-[20vw] md:py-[10vw] lg:py-[5vw] mt-[-250px]  bg-[#000000]">
+      <div className="text-[#FB5607] flex overflow-hidden whitespace-nowrap">
         <motion.h1
           initial={{ x: "100%" }}
           animate={{ x: "-100%" }}

@@ -9,8 +9,9 @@ const Navbar = (props) => {
   const setIsLoggedIn = props.setIsLoggedIn;
 
   return (
-    <nav className=" fixed z-50 w-full shadow-sm backdrop-blur-lg">
-      <div className="flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto">
+    <nav
+      className=" bg-black/50 backdrop-blur-lg left-20 fixed top-0 z-[90] rounded-full border-2 border-[#FB5607]  transition-all duration-300 mx-auto mt-4 w-11/12 shadow-md"
+    >     <div className="flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto">
         <Link to="/">
           <img src={logo} alt="Logo" width={120} height={10} loading="lazy" />
         </Link>

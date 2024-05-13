@@ -53,25 +53,25 @@ const FAQ = () => {
                     faqData.map((faq, index) => (
                         <div
                             key={index}
-                            className=" mx-4 py-6 px-8 bg-[#383838] rounded-[1.2rem] shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px]"
+                            className=" mx-4 py-6 px-8 bg-[#FB5607] rounded-[1.2rem] shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px]"
                         >
                             <div
                                 className="flex justify-between items-center cursor-pointer"
                                 onClick={() => toggleFAQ(index)}
                             >
-                                <p className="text-2xl text-[#E2DDDB]">{faq.question}</p>
+                                <p className="text-2xl text-[#000000]">{faq.question}</p>
 
 
                                 <button
-                                    className="relative w-10 h-10 bg-gray-300 rounded-full flex justify-center items-center focus:outline-none"
+                                    className="relative w-10 h-10 bg-[#000000] rounded-full flex justify-center items-center focus:outline-none"
                                     onClick={() => toggleFAQ(index)}
                                 >
                                     <span
-                                        className={`absolute w-3 h-0.5 bg-black transform transition-transform ${openIndex === index ? 'rotate-0' : 'rotate-90'
+                                        className={`absolute w-3 h-0.5 bg-white transform transition-transform ${openIndex === index ? 'rotate-0' : 'rotate-90'
                                             }`}
                                     ></span>
                                     <span
-                                        className="absolute w-3 h-0.5 bg-black"
+                                        className="absolute w-3 h-0.5 bg-white"
                                     ></span>
                                 </button>
                             </div>

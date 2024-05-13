@@ -14,6 +14,7 @@ import userImage from "../assets/logo.png";
 const TraineeDashboard = () => {
   const [activeTab, setActiveTab] = useState("profile");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Add isLoggedIn state
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -117,8 +118,5 @@ const SidebarOption = ({ icon, text, activeTab, setActiveTab, name }) => {
     </div>
   );
 };
-
-
-
 
 export default TraineeDashboard;

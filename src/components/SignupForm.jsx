@@ -12,11 +12,13 @@ const SignupForm = ({ setIsLoggedIn }) => {
     email: "",
     password: "",
     confirmPassword: "",
+
   });
+
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [accountType, setAccountType] = useState("Trainee");
+  const [accountType, setAccountType] = useState("Trainer");
 
   function changeHandler(event) {
     setFormData((prevData) => ({
@@ -25,30 +27,74 @@ const SignupForm = ({ setIsLoggedIn }) => {
     }));
   }
 
-  function submitHandler(event) {
-    event.preventDefault();
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+
     if (formData.password !== formData.confirmPassword) {
       toast.error("Passwords do not match");
       return;
     }
 
     setIsLoggedIn(true);
+    localStorage.setItem('userRole', accountType.toLowerCase());
     toast.success("Account Created");
-    const accountData = {
-      ...formData,
+
+    const userDetails = {
+      fname: formData.firstName,
+      lname: formData.lastName,
+      e_mail: formData.email,
+      password: formData.password,
     };
 
-    const finalData = {
-      ...accountData,
-      accountType,
-    };
+    try {
+      const response = await fetch('', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userDetails)
+      });
+      console.log(response);
 
-    console.log("printing Final account data ");
-    console.log(finalData);
+      const responseData = await response.json();
+      if (response.ok) {
+        navigate("/login");
+        console.log("Server Response:", response);
 
-    navigate("/dashboard");
-  }
+        toast.success("Account is succesfully Created");
+      } else {
+        throw new Error(response.message || "Failed to create account.");
+      }
+    } catch (error) {
+      toast.error(`Error: ${error.message}`);
+    }
+  };
 
+  // const submitHandler(event) {
+
+  //   event.preventDefault();
+  //   if (formData.password !== formData.confirmPassword) {
+  //     toast.error("Passwords do not match");
+  //     return;
+  //   }
+
+  //   setIsLoggedIn(true);
+  //   toast.success("Account Created");
+  //   const accountData = {
+  //     ...formData,
+  //   };
+
+  //   const finalData = {
+  //     ...accountData,
+  //     accountType,
+  //   };
+
+  //   console.log("printing Final account data ");
+  //   console.log(finalData);
+
+  //   navigate("/dashboard");
+  // }
   return (
     <div>
       {/* Trainer-trainee tab */}
@@ -56,7 +102,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
         <button
           className={`${accountType === "Trainee"
             ? "bg-orange-600 text-gray-50"
-            : "bg-transparent text-white"
+            : "bg-transparent text-gray-900"
             } py-2 px-5 rounded-full transition-all duration-200`}
           onClick={() => setAccountType("Trainee")}
         >
@@ -66,7 +112,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
         <button
           className={`${accountType === "Trainer"
             ? "bg-orange-600 text-gray-50"
-            : "bg-transparent text-white"
+            : "bg-transparent text-gray-900"
             } py-2 px-5 rounded-full transition-all duration-200`}
           onClick={() => setAccountType("Trainer")}
         >
@@ -145,9 +191,9 @@ const SignupForm = ({ setIsLoggedIn }) => {
               onClick={() => setShowPassword((prev) => !prev)}
             >
               {showPassword ? (
-                <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+                <AiOutlineEyeInvisible fontSize={24} fill="#76777A" />
               ) : (
-                <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+                <AiOutlineEye fontSize={24} fill="#76777A" />
               )}
             </span>
           </label>
@@ -170,14 +216,14 @@ const SignupForm = ({ setIsLoggedIn }) => {
               onClick={() => setShowConfirmPassword((prev) => !prev)}
             >
               {showConfirmPassword ? (
-                <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+                <AiOutlineEyeInvisible fontSize={24} fill="#76777A" />
               ) : (
-                <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+                <AiOutlineEye fontSize={24} fill="#76777A" />
               )}
             </span>
           </label>
         </div>
-        <button className=" w-full bg-[#000000] rounded-[8px] font-medium text-[#fb5607] px-[12px] py-[8px] mt-6">
+        <button className=" w-full bg-[#000000] rounded-[8px] font-medium border border-orange-600 text-[#fb5607] px-[12px] py-[8px] mt-6">
           Create Account
         </button>
       </form>

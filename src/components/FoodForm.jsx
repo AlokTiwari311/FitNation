@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { IoFastFood, IoMedicalOutline } from "react-icons/io5";
+import Cookies from "js-cookie";
 
 const initialFormData = {
   dietPreference: "",
@@ -56,11 +57,69 @@ const FoodForm = () => {
     }));
   }
 
+  function changeHandler(event) {
+    const { name, type, checked, value } = event.target;
+    if (type === "checkbox") {
+      if (name in formData.allergies) {
+        setFormData(prevData => ({
+          ...prevData,
+          allergies: {
+            ...prevData.allergies,
+            [name]: checked,
+          },
+        }));
+      } else if (name in formData.preferredCuisine) {
+        setFormData(prevData => ({
+          ...prevData,
+          preferredCuisine: {
+            ...prevData.preferredCuisine,
+            [name]: checked,
+          },
+        }));
+      }
+    } else {
+      setFormData(prevData => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
+  }
+
+
+
   function submitHandler(event) {
+    const myMail_id = Cookies.get("email_id")
+    console.log(myMail_id);
     event.preventDefault();
-    console.log("Food Form Data: ", formData);
-    toast.success("Updated successfully!");
-    setFormData(initialFormData);
+    // console.log("Food Form Data: ", formData);
+
+    const payload = {
+      email: myMail_id,
+      data: [formData.dietPreference,
+      Object.keys(formData.allergies).filter(allergy => formData.allergies[allergy]),
+      Object.keys(formData.preferredCuisine).filter(cuisine => formData.preferredCuisine[cuisine])]
+    };
+    console.log(payload);
+
+    const apiUrl = "https://fitness-server-u793.onrender.com/userDashboard/editfoodpreference";
+
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+      .then(response => response.json())
+      .then(data => {
+        toast.success("Updated successfully!");
+        setFormData(initialFormData);
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        toast.error("Update failed!");
+      });
   }
 
   return (

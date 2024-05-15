@@ -10,15 +10,21 @@ import MyFood from "../pages/MyFood";
 import MyReports from "../pages/MyReports";
 import Settings from "../pages/Settings";
 import userImage from "../assets/logo.png";
+import { SiChatbot } from "react-icons/si";
+import ChatBot from "./Trainer/ChatBot"
+
 
 const TraineeDashboard = () => {
   const [activeTab, setActiveTab] = useState("profile");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Add isLoggedIn state
 
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+
 
   const renderContent = () => {
     switch (activeTab) {
@@ -28,6 +34,8 @@ const TraineeDashboard = () => {
         return <Exercise />;
       case "food":
         return <MyFood />;
+      case "chatbot":
+        return <ChatBot />;
       case "reports":
         return <MyReports />;
       case "settings":
@@ -64,6 +72,13 @@ const TraineeDashboard = () => {
             activeTab={activeTab}
             setActiveTab={setActiveTab}
             name="food"
+          />
+          <SidebarOption
+            icon={<SiChatbot />}
+            text="My Chatbot"
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            name="chatbot"
           />
           <SidebarOption
             icon={<AiOutlineBarChart />}

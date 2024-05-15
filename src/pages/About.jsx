@@ -4,7 +4,7 @@ import Banner2 from "../assets/Banner2.jpg";
 import Story from "../assets/Story.jpg";
 import About1 from "../assets/About1.jpg";
 import { motion } from 'framer-motion';
-import { AiOutlineFileProtect} from 'react-icons/ai';
+import { AiOutlineFileProtect } from 'react-icons/ai';
 import { GiShinyApple } from 'react-icons/gi';
 import { GrUserExpert } from 'react-icons/gr';
 import { ImNext, ImPrevious } from 'react-icons/im';
@@ -15,29 +15,29 @@ const About = () => {
     //Temp Trainers Data
     const trainer = [
         {
-            photo : egg,
-            trainerName : "Trainer 1",
-            specialisations : ["Specialisation", "of", "Trainer",],
+            photo: egg,
+            trainerName: "Trainer 1",
+            specialisations: ["Specialisation", "of", "Trainer",],
         },
         {
-            photo : egg,
-            trainerName : "Trainer 2",
-            specialisations : ["Specialisation", "of", "Trainer",],
+            photo: egg,
+            trainerName: "Trainer 2",
+            specialisations: ["Specialisation", "of", "Trainer",],
         },
         {
-            photo : egg,
-            trainerName : "Trainer 3",
-            specialisations : ["Specialisation", "of", "Trainer",],
+            photo: egg,
+            trainerName: "Trainer 3",
+            specialisations: ["Specialisation", "of", "Trainer",],
         },
         {
-            photo : egg,
-            trainerName : "Trainer 4",
-            specialisations : ["Specialisation", "of", "Trainer",],
+            photo: egg,
+            trainerName: "Trainer 4",
+            specialisations: ["Specialisation", "of", "Trainer",],
         },
         {
-            photo : egg,
-            trainerName : "Trainer 5",
-            specialisations : ["Specialisation", "of", "Trainer",],
+            photo: egg,
+            trainerName: "Trainer 5",
+            specialisations: ["Specialisation", "of", "Trainer",],
         },
     ]
 
@@ -54,15 +54,15 @@ const About = () => {
             prevIndex - 3 >= 0 ? prevIndex - 3 : trainer.length - 3
         );
     };
-    
+
     return (
         <div className='flex flex-col pt-[20px]'>
             <div className='py-24'>
                 <span className='flex justify-center w-full'>
-                    <img src={Banner1} alt="Banner1" className='border-2 border-orange-600'/>
+                    <img src={Banner1} alt="Banner1" className='border-2 border-orange-600' />
                 </span>
                 <span className='flex justify-center'>
-                    <img src={Banner2} alt="Banner2" className='w-2/3 -mt-16 md:-mt-32 lg:-mt-48'/>
+                    <img src={Banner2} alt="Banner2" className='w-2/3 -mt-16 md:-mt-32 lg:-mt-48' />
                 </span>
             </div>
 
@@ -76,11 +76,11 @@ const About = () => {
                     <div className='bg-gray-200 p-10'>
                         <h1 className='text-black text-3xl font-bold'>Story</h1>
                         <p className='text-lg text-gray-600 font-medium py-5'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.point of using Lorem Ipsum.</p>
-                        <img src={Story} alt="StoryImage" className='w-full'/>
+                        <img src={Story} alt="StoryImage" className='w-full' />
                     </div>
                 </div>
                 <div className='flex flex-col w-full md:w-full lg:w-1/2 gap-10'>
-                    <div className='bg-cover bg-center h-2/3 p-10' style={{backgroundImage: `url(${About1})`}}>
+                    <div className='bg-cover bg-center h-2/3 p-10' style={{ backgroundImage: `url(${About1})` }}>
                         <h1 className='text-white text-3xl font-bold pt-44'>Our Mission</h1>
                         <p className='text-lg text-white font-medium py-5'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.point of using Lorem Ipsum.</p>
                     </div>
@@ -92,10 +92,10 @@ const About = () => {
             </div>
 
             <div className='py-20'>
-                <div  className='w-full md:w-full md:h-96 lg:h-96 relative'>
-                    <motion.video initial={{opacity:1}} 
-                    transition={{duration:.9,delay:.05}}
-                    src="/videos/b_Gym.mp4" className="w-[100%] h-[100%] object-cover" muted loop autoPlay
+                <div className='w-full md:w-full md:h-96 lg:h-96 relative'>
+                    <motion.video initial={{ opacity: 1 }}
+                        transition={{ duration: .9, delay: .05 }}
+                        src="/videos/b_Gym.mp4" className="w-[100%] h-[100%] object-cover" muted loop autoPlay
                     />
                     <h1 className='absolute bottom-28 left-16 md:bottom-36 md:left-44 md:text-7xl lg:bottom-36 lg:left-48 lg:text-9xl font-extrabold outline-text'>OUR FACILITIES</h1>
                 </div>
@@ -106,17 +106,17 @@ const About = () => {
                     </div>
                     <div className='flex flex-col md:flex-col lg:flex-row justify-between gap-10 h-2/3'>
                         <div className='bg-gray-100 bg-opacity-10 border border-orange-600 p-10 flex flex-col gap-5'>
-                            <AiOutlineFileProtect className='text-5xl text-orange-600 '/>
+                            <AiOutlineFileProtect className='text-5xl text-orange-600 ' />
                             <h1 className='text-white text-2xl font-semibold'>Certified Trainer</h1>
                             <p className='text-lg text-white font-light'>Bring to the table win survival strategies ensure proactive new domination.</p>
                         </div>
                         <div className='bg-gray-100 bg-opacity-10 border border-orange-600 p-10 flex flex-col gap-5'>
-                            <GiShinyApple className='text-5xl text-orange-600 '/>
+                            <GiShinyApple className='text-5xl text-orange-600 ' />
                             <h1 className='text-white text-2xl font-semibold'>Nutrition & Diet</h1>
                             <p className='text-lg text-white font-light'>Bring to the table win survival strategies ensure proactive new domination.</p>
                         </div>
                         <div className='bg-gray-100 bg-opacity-10 border border-orange-600 p-10 flex flex-col gap-5'>
-                            <GrUserExpert className='text-5xl text-orange-600 '/>
+                            <GrUserExpert className='text-5xl text-orange-600 ' />
                             <h1 className='text-white text-2xl font-semibold'>Years of Experience</h1>
                             <p className='text-lg text-white font-light'>Bring to the table win survival strategies ensure proactive new domination.</p>
                         </div>
@@ -149,8 +149,8 @@ const About = () => {
                     <h1 className='text-orange-600 text-2xl lg:text-4xl font-bold'>We Trained You to Gain</h1>
                 </div>
                 <div className="flex justify-center lg:justify-end px-32 pt-3 gap-5">
-                    <ImPrevious onClick={prevTrainer} className="text-2xl lg:text-4xl text-orange-600 cursor-pointer shadow-md rounded-full"/>
-                    <ImNext onClick={nextTrainer} className="text-2xl lg:text-4xl text-orange-600 cursor-pointer shadow-md rounded-full"/>
+                    <ImPrevious onClick={prevTrainer} className="text-2xl lg:text-4xl text-orange-600 cursor-pointer shadow-md rounded-full" />
+                    <ImNext onClick={nextTrainer} className="text-2xl lg:text-4xl text-orange-600 cursor-pointer shadow-md rounded-full" />
                 </div>
                 <div className='px-10 md:px-28 lg:px-32 py-5 md:py-10 lg:py-20 flex flex-col items-center md:flex-col lg:flex-row justify-center gap-16 '>
                     {trainer.slice(currentTrainer, currentTrainer + 3).map((item, index) => (

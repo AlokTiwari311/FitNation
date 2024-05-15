@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
-import FAQ from "./components/FAQ"
+import FAQ from "./components/FAQ";
 import { useEffect, useState } from "react";
 import PrivateRoute from "./components/PrivateRoute";
 import Classes from "./components/Classes";
@@ -18,16 +18,26 @@ import WishList from "./components/WishList";
 import Cart from "./components/Cart";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import ForgotPassword from "./components/ForgotPassword";
+import CreatePassword from "./components/CreatePassword";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true");
   const location = useLocation();
   const isDashboardPage = location.pathname === "/dashboard";
 
-  return (
-    <div className=" flex flex-col">
-      {!isDashboardPage && <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
+  useEffect(() => {
+    localStorage.setItem("isLoggedIn", isLoggedIn);
+  }, [isLoggedIn]);
 
+  const handleLogout = () => {
+    setIsLoggedIn(false); // Update state
+    localStorage.removeItem("isLoggedIn"); // Clear localStorage
+  };
+
+  return (
+    <div className="flex flex-col">
+      {!isDashboardPage && <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} onLogout={handleLogout} />}
       <Routes>
         <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
         <Route path="/about" element={<About isLoggedIn={isLoggedIn} />} />
@@ -37,28 +47,13 @@ function App() {
         <Route path='/details' element={<Details />} />
         <Route path='/wishlist' element={<WishList />} />
         <Route path='/cart' element={<Cart />} />
-
-        <Route
-          path="/login"
-          element={<Login setIsLoggedIn={setIsLoggedIn} />}
-        />
-
-        <Route
-          path="/signup"
-          element={<Signup setIsLoggedIn={setIsLoggedIn} />}
-        />
-
-        <Route
-          path="/dashboard"
-          element={
-            <PrivateRoute isLoggedIn={isLoggedIn}>
-              <Dashboard />
-            </PrivateRoute>
-          }
-        />
+        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
+        <Route path="/createPassword" element={<CreatePassword />} />
+        <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/dashboard" element={<PrivateRoute isLoggedIn={isLoggedIn}><Dashboard /></PrivateRoute>} />
       </Routes>
       <Footer />
-
     </div>
   );
 }

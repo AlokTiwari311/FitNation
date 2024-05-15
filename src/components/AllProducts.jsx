@@ -16,6 +16,8 @@ const AllProducts = () => {
     filteredProducts = products;
   }
 
+
+
   return (
     <div className='py-20 bg-[#F8F8F3]'>
       {location.state?.category && (
@@ -25,10 +27,10 @@ const AllProducts = () => {
             <h1 className='text-xl font-semibold text-orange-600 '>Categories</h1>
           </div>
           <div className='py-4 flex flex-row'>
-          <Link to='/shop'>
-            <h1 className='text-gray-500'>Shop / </h1>
-          </Link>
-          <h1 className='px-1 font-semibold'>{location.state.category}</h1>
+            <Link to='/shop'>
+              <h1 className='text-gray-500'>Shop / </h1>
+            </Link>
+            <h1 className='px-1 font-semibold'>{location.state.category}</h1>
           </div>
         </div>
       )}
@@ -36,38 +38,38 @@ const AllProducts = () => {
       {location.state?.attribute && (
         <div className='px-16 py-4'>
           <div className='pb-6 flex flex-row'>
-          <Link to='/shop'>
-            <h1 className='text-gray-500'>Shop / </h1>
-          </Link>
-          <h1 className='px-1 font-semibold'>Best Selling</h1>
+            <Link to='/shop'>
+              <h1 className='text-gray-500'>Shop / </h1>
+            </Link>
+            <h1 className='px-1 font-semibold'>Best Selling</h1>
           </div>
           <div className='p-1 flex flex-row items-center'>
             <span className='bg-orange-600 w-3 h-6 mr-3'></span>
             <h1 className='text-xl font-semibold text-orange-600 '>This Month</h1>
           </div>
-        <h1 className='py-2  text-3xl font-bold text-black '>Best Selling Products</h1>
+          <h1 className='py-2  text-3xl font-bold text-black '>Best Selling Products</h1>
         </div>
       )}
 
       {!location.state?.category && !location.state?.attribute && (
-      <div className='px-16 py-4'>
-        <div className='pb-6 flex flex-row'>
-          <Link to='/shop'>
-            <h1 className='text-gray-500'>Shop / </h1>
-          </Link>
-          <h1 className='px-1 font-semibold'>Our Products</h1>
+        <div className='px-16 py-4'>
+          <div className='pb-6 flex flex-row'>
+            <Link to='/shop'>
+              <h1 className='text-gray-500'>Shop / </h1>
+            </Link>
+            <h1 className='px-1 font-semibold'>Our Products</h1>
+          </div>
+          <div className='p-1 flex flex-row items-center'>
+            <span className='bg-orange-600 w-3 h-6 mr-3'></span>
+            <h1 className='text-xl font-semibold text-orange-600 '>Our Products</h1>
+          </div>
+          <h1 className='py-2 text-3xl font-bold text-black '>Explore Our Products</h1>
         </div>
-        <div className='p-1 flex flex-row items-center'>
-          <span className='bg-orange-600 w-3 h-6 mr-3'></span>
-          <h1 className='text-xl font-semibold text-orange-600 '>Our Products</h1>
-        </div>
-        <h1 className='py-2 text-3xl font-bold text-black '>Explore Our Products</h1>
-      </div> 
-      )} 
+      )}
 
       <div className='px-16 flex flex-wrap justify-left gap-7'>
         {filteredProducts.map((product, index) => (
-          <ProductCard key={index} product={product} products={products}/>
+          <ProductCard key={index} product={product} products={products} />
         ))}
       </div>
     </div>
@@ -78,29 +80,27 @@ const ProductCard = ({ product, products }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link to="/details" state={{product: product, products: products}}>
+    <Link to="/details" state={{ product: product, products: products }}>
       <div
         className='relative p-2 bg-white shadow-md'
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <img src={product.image} alt="Product Photo" className='w-52 h-52 border border-gray-300' />
+        <img src={product.Product_Image} alt="Product Photo" className='w-52 h-52 border border-gray-300' />
         {isHovered && (
           <button className='absolute top-44 left-2 right-2 flex items-center justify-center bg-gray-200 opacity-90 font-bold text-black h-10'>
             View Details
           </button>
         )}
         <div className='p-2'>
-          <h1 className='font-bold'>{product.title}</h1>
+          <h1 className='font-bold'>{product.Product_Name}</h1>
           <h1 className='text-sm text-gray-500'>{product.category}</h1>
           <div className='flex items-center mt-2 gap-1'>
-            <h1 className='font-bold text-md'>Rs.{product.currentPrice}</h1>
-            <h1 className='text-xs text-gray-400 line-through'>Rs.{product.originalPrice}</h1>
-            <h1 className='text-xs text-orange-400'>(Rs.{product.originalPrice - product.currentPrice} OFF)</h1>
+            <h1 className='text-xs text-gray-400 line-through'>Rs.{product.Product_Price}</h1>
           </div>
           <div className='flex flex-row gap-1 items-center py-2'>
             <h1 className="text-md text-black">( {product.rating} </h1>
-            <AiFillStar className='text-lg text-yellow-400'/>
+            <AiFillStar className='text-lg text-yellow-400' />
             <h1 className="text-md text-black">)</h1>
           </div>
         </div>

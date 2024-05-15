@@ -5,6 +5,8 @@ import { IoMdBed } from "react-icons/io";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { IoFastFood } from "react-icons/io5";
+import Cookies from "js-cookie";
+
 
 const initialFormData = {
   currentWeight: "",
@@ -27,12 +29,43 @@ const GoalsForm = () => {
     }));
   }
 
+
+
   function submitHandler(event) {
+    const myMail_id = Cookies.get("email_id")
+    console.log(myMail_id);
     event.preventDefault();
     console.log("Goals Form Data: ", formData);
-    toast.success("Updated successfully!");
-    setFormData(initialFormData);
+
+    console.log("Food Form Data: ", formData);
+
+    const payload = {
+      email: myMail_id,
+      data: formData
+    };
+
+    console.log(payload);
+    const apiUrl = "https://fitness-server-u793.onrender.com/userDashboard/editgoals";
+
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+      .then(response => response.json())
+      .then(data => {
+        toast.success("Updated successfully!");
+        setFormData(initialFormData);
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        toast.error("Update failed!");
+      });
   }
+
 
   return (
     <>
@@ -109,7 +142,7 @@ const GoalsForm = () => {
             />
           </label>
         </div>
-        
+
         <div className="flex gap-x-4 mt-[20px]">
           <label className="w-full">
             <div className="flex flex-row font-bold ml-2">
@@ -142,7 +175,7 @@ const GoalsForm = () => {
               className="text-white::placeholder placeholder-gray-500 text-black outline-none rounded-[0.5rem]  w-full p-[12px] bg-transparent border-b border-gray-500 focus:border-orange-500"
             />
           </label>
-        </div>        
+        </div>
 
         <div className="flex gap-x-4 mt-[20px]">
           <label className="w-full">

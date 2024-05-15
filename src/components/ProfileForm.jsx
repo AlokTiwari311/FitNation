@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { RiCalendar2Line, RiUserLine } from "react-icons/ri";
 import { IoMdMan, IoMdWoman, IoMdMail, IoMdCall } from "react-icons/io";
 import { GiBodyHeight, GiWeight } from "react-icons/gi";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cookies from "js-cookie";
 
 const initialFormData = {
   profilePhoto: "",
@@ -20,19 +22,50 @@ const initialFormData = {
 const ProfileForm = () => {
   const [formData, setFormData] = useState(initialFormData);
 
-  function changeHandler(event) {
-    setFormData((prevData) => ({
+  const changeHandler = (event) => {
+    const { name, value } = event.target;
+    setFormData(prevData => ({
       ...prevData,
-      [event.target.name]: event.target.value,
+      [name]: value
     }));
-  }
+  };
 
-  function submitHandler(event) {
+  const submitHandler = (event) => {
     event.preventDefault();
-    console.log("Profile Form Data: ", formData);
-    toast.success("Updated successfully!");
-    setFormData(initialFormData);
-  }
+    const myMail_id = Cookies.get("email_id");
+    console.log("Logged-in User's Email ID: ", myMail_id);
+
+    const payload = {
+      email: myMail_id,
+      data: formData
+    };
+
+    const apiUrl = "https://fitness-server-u793.onrender.com/mentorDashboard/editProfileInfo";
+
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        toast.success("Profile updated successfully!");
+        setFormData(initialFormData);
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        toast.error("Failed to update profile. Please try again!");
+      });
+  };
+
 
   return (
     <>

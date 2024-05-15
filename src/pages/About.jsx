@@ -56,18 +56,18 @@ const About = () => {
     };
     
     return (
-        <div className='flex flex-col bg-[#F8F8F3] pt-[20px]'>
+        <div className='flex flex-col pt-[20px]'>
             <div className='py-24'>
                 <span className='flex justify-center w-full'>
-                    <img src={Banner1} alt="Banner1" />
+                    <img src={Banner1} alt="Banner1" className='border-2 border-orange-600'/>
                 </span>
                 <span className='flex justify-center'>
                     <img src={Banner2} alt="Banner2" className='w-2/3 -mt-16 md:-mt-32 lg:-mt-48'/>
                 </span>
             </div>
 
-            <div className='flex flex-col md:flex-col lg:flex-row p-8 md:p-10 lg:p-20 gap-10 py-20'>
-                <div className='flex flex-col w-full md:w-full lg:w-1/2'>
+            <div className='flex flex-col md:flex-col lg:flex-row p-8 md:p-10 lg:p-20 gap-10 py-20 bg-white'>
+                <div className='flex flex-col w-full md:w-full lg:w-1/2 '>
                     <div>
                         <h1 className='text-blue-600 font-semibold text-xl '>W E L C O M E</h1>
                         <h1 className='text-black text-5xl font-extrabold'>The Story Behind <br /> us!</h1>
@@ -105,18 +105,18 @@ const About = () => {
                         <h1 className='text-white text-4xl md:text-5xl lg:text-5xl font-semibold'>My core work values</h1>
                     </div>
                     <div className='flex flex-col md:flex-col lg:flex-row justify-between gap-10 h-2/3'>
-                        <div className='bg-gray-100 bg-opacity-10 border border-gray-700 p-10 flex flex-col gap-5'>
-                            <AiOutlineFileProtect className='text-5xl text-white '/>
+                        <div className='bg-gray-100 bg-opacity-10 border border-orange-600 p-10 flex flex-col gap-5'>
+                            <AiOutlineFileProtect className='text-5xl text-orange-600 '/>
                             <h1 className='text-white text-2xl font-semibold'>Certified Trainer</h1>
                             <p className='text-lg text-white font-light'>Bring to the table win survival strategies ensure proactive new domination.</p>
                         </div>
-                        <div className='bg-gray-100 bg-opacity-10 border border-gray-700 p-10 flex flex-col gap-5'>
-                            <GiShinyApple className='text-5xl text-white '/>
+                        <div className='bg-gray-100 bg-opacity-10 border border-orange-600 p-10 flex flex-col gap-5'>
+                            <GiShinyApple className='text-5xl text-orange-600 '/>
                             <h1 className='text-white text-2xl font-semibold'>Nutrition & Diet</h1>
                             <p className='text-lg text-white font-light'>Bring to the table win survival strategies ensure proactive new domination.</p>
                         </div>
-                        <div className='bg-gray-100 bg-opacity-10 border border-gray-700 p-10 flex flex-col gap-5'>
-                            <GrUserExpert className='text-5xl text-white '/>
+                        <div className='bg-gray-100 bg-opacity-10 border border-orange-600 p-10 flex flex-col gap-5'>
+                            <GrUserExpert className='text-5xl text-orange-600 '/>
                             <h1 className='text-white text-2xl font-semibold'>Years of Experience</h1>
                             <p className='text-lg text-white font-light'>Bring to the table win survival strategies ensure proactive new domination.</p>
                         </div>
@@ -124,43 +124,43 @@ const About = () => {
                 </div>
             </div>
 
-            <div className='flex flex-row px-2 lg:justify-center'>
-                <div className='flex flex-col items-center p-4 md:p-6 lg:p-8 w-60 border border-[#1b2129] border-opacity-15'>
-                    <h1 className='text-[#1b2129] text-2xl md:text-3xl lg:text-5xl font-bold'>10+</h1>
-                    <p className='text-[#1b2129] p-2 px-4 text-xs md:text-sm lg:text-lg'>Year of Experience</p>
+            <div className='flex flex-row px-2 lg:justify-center gap-5'>
+                <div className='flex flex-col items-center p-4 md:p-6 lg:p-8 w-64 border border-orange-600'>
+                    <h1 className='text-orange-600 text-2xl md:text-3xl lg:text-5xl font-bold'>10+</h1>
+                    <p className='text-orange-600 p-2 px-4 text-xs md:text-sm lg:text-lg'>Year of Experience</p>
                 </div>
-                <div className='flex flex-col items-center p-4 md:p-6 lg:p-8 w-60 border border-[#1b2129] border-opacity-15'>
-                    <h1 className='text-[#1b2129] text-2xl md:text-3xl lg:text-5xl font-bold'>500+</h1>
-                    <p className='text-[#1b2129] py-2 text-xs md:text-sm lg:text-lg'>Happy Clients</p>
+                <div className='flex flex-col items-center p-4 md:p-6 lg:p-8 w-64 border border-orange-600'>
+                    <h1 className='text-orange-600 text-2xl md:text-3xl lg:text-5xl font-bold'>500+</h1>
+                    <p className='text-orange-600 py-2 text-xs md:text-sm lg:text-lg'>Happy Clients</p>
                 </div>
-                <div className='flex flex-col items-center p-4 md:p-6 lg:p-8 w-60 border border-[#1b2129] border-opacity-15'>
-                    <h1 className='text-[#1b2129] text-2xl md:text-3xl lg:text-5xl font-bold'>50+</h1>
-                    <p className='text-[#1b2129] py-2 text-xs md:text-sm lg:text-lg'>Expert Trainers</p>
+                <div className='flex flex-col items-center p-4 md:p-6 lg:p-8 w-64 border border-orange-600'>
+                    <h1 className='text-orange-600 text-2xl md:text-3xl lg:text-5xl font-bold'>50+</h1>
+                    <p className='text-orange-600 py-2 text-xs md:text-sm lg:text-lg'>Expert Trainers</p>
                 </div>
-                <div className='flex flex-col items-center p-4 md:p-6 lg:p-8 w-60 border border-[#1b2129] border-opacity-15'>
-                    <h1 className='text-[#1b2129] text-2xl md:text-3xl lg:text-5xl font-bold'>15k</h1>
-                    <p className='text-[#1b2129] py-2 px-4 text-xs md:text-sm lg:text-lg'>Instagram followers</p>
+                <div className='flex flex-col items-center p-4 md:p-6 lg:p-8 w-64 border border-orange-600'>
+                    <h1 className='text-orange-600 text-2xl md:text-3xl lg:text-5xl font-bold'>15k</h1>
+                    <p className='text-orange-600 py-2 px-4 text-xs md:text-sm lg:text-lg'>Instagram followers</p>
                 </div>
             </div>
 
             <div className='py-32'>
                 <div className='flex flex-col items-center gap-3'>
-                    <h1 className='text-blue-700 font-semibold text-md lg:text-xl'>O U R - T R A I N E R S</h1>
-                    <h1 className='text-black text-2xl lg:text-4xl font-bold'>We Trained You to Gain</h1>
+                    <h1 className='text-white font-semibold text-md lg:text-xl'>O U R - T R A I N E R S</h1>
+                    <h1 className='text-orange-600 text-2xl lg:text-4xl font-bold'>We Trained You to Gain</h1>
                 </div>
                 <div className="flex justify-center lg:justify-end px-32 pt-3 gap-5">
-                    <ImPrevious onClick={prevTrainer} className="text-2xl lg:text-4xl text-gray-800 cursor-pointer shadow-md rounded-full"/>
-                    <ImNext onClick={nextTrainer} className="text-2xl lg:text-4xl text-gray-800 cursor-pointer shadow-md rounded-full"/>
+                    <ImPrevious onClick={prevTrainer} className="text-2xl lg:text-4xl text-orange-600 cursor-pointer shadow-md rounded-full"/>
+                    <ImNext onClick={nextTrainer} className="text-2xl lg:text-4xl text-orange-600 cursor-pointer shadow-md rounded-full"/>
                 </div>
                 <div className='px-10 md:px-28 lg:px-32 py-5 md:py-10 lg:py-20 flex flex-col items-center md:flex-col lg:flex-row justify-center gap-16 '>
                     {trainer.slice(currentTrainer, currentTrainer + 3).map((item, index) => (
-                        <div key={index} className='w-80'>
-                            <img src={item.photo} alt="UserPhoto" className='border-4 border-gray-800 ' />
-                            <div className='bg-gray-800 w-full p-8'>
+                        <div key={index} className='w-80 border border-gray-400'>
+                            <img src={item.photo} alt="UserPhoto" className='border-4 border-orange-600 ' />
+                            <div className='bg-orange-600 w-full p-8'>
                                 <h1 className='text-white font-bold text-2xl'>{item.trainerName}</h1>
-                                <hr className='mt-2 p-2 opacity-25' />
+                                <hr className='mt-2 p-2 opacity-60' />
                                 <h1 className='text-white text-md font-semibold py-2'>Specialisations : </h1>
-                                <p className='text-gray-400 text-sm'>{item.specialisations.join(", ")}</p>
+                                <p className='text-gray-200 text-sm'>{item.specialisations.join(", ")}</p>
                             </div>
                         </div>
                     ))}

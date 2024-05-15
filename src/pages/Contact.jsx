@@ -41,17 +41,17 @@ const Contact = () => {
     }
 
     return (
-        <div className='bg-[#F8F8F3] py-24 pt-[110px]'>
+        <div className='py-32'>
             <ToastContainer />
             <div className='flex flex-col items-center'>
-                <h1 className='text-2xl md:text-4xl lg:text-6xl font-bold'>Contact Us</h1>
-                <span className='flex flex-col md:flex-row md:gap-2 lg:gap-2 text-xl md:text-2xl lg:text-3xl text-gray-500 p-4'>
+                <h1 className='text-2xl md:text-4xl lg:text-6xl font-bold text-orange-600'>Contact Us</h1>
+                <span className='flex flex-col md:flex-row md:gap-2 lg:gap-2 text-xl md:text-2xl lg:text-3xl text-gray-50 p-4'>
                     <p>Any question or remarks?</p>
                     <p>Just write us a message!</p>
                 </span>
             </div>
             <div className='px-10 py-10 md:py-10 lg:py-16 md:p-16 lg:px-24'>
-                <div className='bg-white rounded-md p-3 shadow-lg flex flex-col md:flex-col lg:flex-row'>
+                <div className='bg-white rounded-md p-3 border-4 border-orange-600 flex flex-col md:flex-col lg:flex-row'>
                     <div className='bg-black rounded-md w-full md:w-full lg:w-2/5 p-8 relative'>
                         <div>
                             <h1 className='text-4xl font-semibold text-white'>Contact Information</h1>

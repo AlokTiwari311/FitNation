@@ -56,7 +56,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
         <button
           className={`${accountType === "Trainee"
             ? "bg-orange-600 text-gray-50"
-            : "bg-transparent text-gray-900"
+            : "bg-transparent text-white"
             } py-2 px-5 rounded-full transition-all duration-200`}
           onClick={() => setAccountType("Trainee")}
         >
@@ -66,7 +66,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
         <button
           className={`${accountType === "Trainer"
             ? "bg-orange-600 text-gray-50"
-            : "bg-transparent text-gray-900"
+            : "bg-transparent text-white"
             } py-2 px-5 rounded-full transition-all duration-200`}
           onClick={() => setAccountType("Trainer")}
         >
@@ -145,9 +145,9 @@ const SignupForm = ({ setIsLoggedIn }) => {
               onClick={() => setShowPassword((prev) => !prev)}
             >
               {showPassword ? (
-                <AiOutlineEyeInvisible fontSize={24} fill="#76777A" />
+                <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
               ) : (
-                <AiOutlineEye fontSize={24} fill="#76777A" />
+                <AiOutlineEye fontSize={24} fill="#AFB2BF" />
               )}
             </span>
           </label>
@@ -170,14 +170,14 @@ const SignupForm = ({ setIsLoggedIn }) => {
               onClick={() => setShowConfirmPassword((prev) => !prev)}
             >
               {showConfirmPassword ? (
-                <AiOutlineEyeInvisible fontSize={24} fill="#76777A" />
+                <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
               ) : (
-                <AiOutlineEye fontSize={24} fill="#76777A" />
+                <AiOutlineEye fontSize={24} fill="#AFB2BF" />
               )}
             </span>
           </label>
         </div>
-        <button className=" w-full bg-[#000000] rounded-[8px] font-medium border border-orange-600 text-[#fb5607] px-[12px] py-[8px] mt-6">
+        <button className=" w-full bg-[#000000] rounded-[8px] font-medium text-[#fb5607] px-[12px] py-[8px] mt-6">
           Create Account
         </button>
       </form>
